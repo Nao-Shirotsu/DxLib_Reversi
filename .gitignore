@@ -1,5 +1,5 @@
 *
-!*.cpp
-!*.hpp
 !.gitignore
-!*md
+!README.md
+!Reversi.sln
+!Reversi/*vcxproj*
