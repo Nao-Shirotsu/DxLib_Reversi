@@ -1,12 +1,76 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="リソース ファイル">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="Game">
+      <UniqueIdentifier>{c4f3ac5a-726f-436e-985d-cbc2916b80c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DX">
+      <UniqueIdentifier>{4cde3a32-622a-4b5d-a265-3d79dbca66e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource">
+      <UniqueIdentifier>{2fd92ccc-b4b1-4c6c-84e3-3bf9bf437fd5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Scene">
+      <UniqueIdentifier>{9d92be18-5499-4b02-8e63-4907b941c3ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Network">
+      <UniqueIdentifier>{dcd9f7bc-e144-40f5-a73a-e780374f8aac}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinMain.cpp" />
+    <ClCompile Include="Resource_Manager.cpp">
+      <Filter>Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="DX_IManager.cpp">
+      <Filter>DX</Filter>
+    </ClCompile>
+    <ClCompile Include="DX_EmptyManager.cpp">
+      <Filter>DX</Filter>
+    </ClCompile>
+    <ClCompile Include="DX_Manager.cpp">
+      <Filter>DX</Filter>
+    </ClCompile>
+    <ClCompile Include="Game_Scene_IScene.cpp">
+      <Filter>Game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Game_Scene_Title.cpp">
+      <Filter>Game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Game_Core.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Network_Manager.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Resource_Index.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="Game_Core.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource_Manager.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="DX_IManager.h">
+      <Filter>DX</Filter>
+    </ClInclude>
+    <ClInclude Include="DX_EmptyManager.h">
+      <Filter>DX</Filter>
+    </ClInclude>
+    <ClInclude Include="DX_Manager.h">
+      <Filter>DX</Filter>
+    </ClInclude>
+    <ClInclude Include="Game_Scene_IScene.h">
+      <Filter>Game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Game_Scene_Title.h">
+      <Filter>Game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Network_Manager.h">
+      <Filter>Network</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
