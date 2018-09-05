@@ -21,7 +21,7 @@ void Manager::Draw( Resource::PicIndex index ){}
 
 void Manager::Play( Resource::SoundIndex index ){}
 
-char * Manager::to_chPtr( const char* str){
+char * Manager::ToCharPtr( const char* str ){
 	return nullptr;
 }
 

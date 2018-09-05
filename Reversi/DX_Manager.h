@@ -18,7 +18,8 @@ public:
 	void Play( Resource::SoundIndex index );
 
 private:
-	char* to_chPtr( const char* str );
+	// 引数と同じ文字列を持つchar*型のインスタンスを生成して返す
+	char* ToCharPtr( const char* str );
 };
 
 }

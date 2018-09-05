@@ -16,7 +16,7 @@ bool Core::IsGameEnd(){
 }
 
 void Core::Update(){
-	std::unique_ptr<Scene::IScene> nextScene = std::move( scene->TransitionToNext() );
+	std::unique_ptr<Scene::IScene> nextScene = scene->TransitionToNext();
 	if( nextScene ){
 		scene = std::move( nextScene );
 	}
