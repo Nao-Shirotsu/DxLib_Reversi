@@ -7,11 +7,11 @@ namespace Resource{
 // Resource::Manager‚Ì2‚Â‚Ì”z—ñ(.cpp“à)‚Ì—v‘f”Ô†‚Æˆê’v‚³‚¹‚é
 
 enum class PicIndex{
-	SAMURAI = 0,
+	Samurai = 0,
 };
 
 enum class SoundIndex{
-	DICIDE = 0,
+	Decide = 0,
 };
 
 }
