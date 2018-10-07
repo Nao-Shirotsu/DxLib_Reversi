@@ -22,6 +22,6 @@
     ┣ README.md
     ┣ Reversi.sln
     ┗ Reversi/
-        ┣ .vcxprojファイル
-        ┣ .hppファイル
-        ┗ .cppファイル
+        ┣ .vcxproj files
+        ┣ .hpp files
+        ┗ .cpp files
