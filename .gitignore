@@ -2,8 +2,11 @@
 Debug/
 Release/
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
 x64/
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 GoogleTest/
 packages/

@@ -91,8 +91,13 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>C:\Users\root\usr\local\include\dxlib</AdditionalIncludeDirectories>
+<<<<<<< Updated upstream
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
+=======
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+>>>>>>> Stashed changes
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>C:\Users\root\usr\local\lib\dxlib</AdditionalLibraryDirectories>
@@ -125,6 +130,10 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>C:\Users\root\usr\local\include\dxlib</AdditionalIncludeDirectories>
+<<<<<<< Updated upstream
+=======
+      <LanguageStandard>stdcpp17</LanguageStandard>
+>>>>>>> Stashed changes
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -143,6 +152,10 @@
     <ClCompile Include="Network_Manager.cpp" />
     <ClCompile Include="Resource_Manager.cpp" />
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+    <ClCompile Include="Util.cpp" />
+>>>>>>> Stashed changes
 =======
     <ClCompile Include="Util.cpp" />
 >>>>>>> Stashed changes
@@ -150,6 +163,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DX_EmptyManager.h" />
+<<<<<<< Updated upstream
+=======
+    <ClInclude Include="DX_KeyCode.h" />
+>>>>>>> Stashed changes
     <ClInclude Include="DX_Manager.h" />
     <ClInclude Include="Game_Core.h" />
     <ClInclude Include="DX_IManager.h" />
@@ -159,6 +176,10 @@
     <ClInclude Include="Resource_Index.h" />
     <ClInclude Include="Resource_Manager.h" />
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+    <ClInclude Include="Util.h" />
+>>>>>>> Stashed changes
 =======
     <ClInclude Include="Util.h" />
 >>>>>>> Stashed changes

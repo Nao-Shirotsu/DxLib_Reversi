@@ -3,6 +3,10 @@
 #include <string>
 
 #include "Resource_Index.h"
+<<<<<<< Updated upstream
+=======
+#include "DX_KeyCode.h"
+>>>>>>> Stashed changes
 
 namespace DX{
 // DxLib関数のラッパークラスのインターフェース
@@ -20,7 +24,11 @@ public:
 
 	// 文字列を描画
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	virtual void Draw( std::string text ) = 0;
+=======
+	virtual void Draw( std::string text, int x, int y ) = 0;
+>>>>>>> Stashed changes
 =======
 	virtual void Draw( std::string text, int x, int y ) = 0;
 >>>>>>> Stashed changes
@@ -34,9 +42,18 @@ public:
 	// ロードした音声ファイルを再生
 	virtual void Play( Resource::SoundIndex index ) = 0;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
 
 	virtual bool HasError() = 0;
+>>>>>>> Stashed changes
+=======
+
+	// 致命的な(実行を終了すべき)エラーが発生しているかどうか
+	virtual bool HasError() = 0;
+
+	// あるキーが押されたか引数keyで受け取って調べる
+	virtual bool IsKeyDown( KeyCode key ) = 0;
 >>>>>>> Stashed changes
 };
 
