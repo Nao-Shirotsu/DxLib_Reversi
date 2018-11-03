@@ -22,7 +22,11 @@ void EmptyManager::Load( Resource::SoundIndex index ){
 
 }
 
+<<<<<<< Updated upstream
 void EmptyManager::Draw( std::string text ){
+=======
+void EmptyManager::Draw( std::string text, int x, int y ){
+>>>>>>> Stashed changes
 
 }
 
@@ -34,6 +38,13 @@ void EmptyManager::Play( Resource::SoundIndex index ){
 
 }
 
+<<<<<<< Updated upstream
+=======
+bool EmptyManager::HasError(){
+	return false;
+}
+
+>>>>>>> Stashed changes
 
 
 }
