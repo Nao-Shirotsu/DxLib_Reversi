@@ -1,8 +1,5 @@
-#include "Game_Scene_Title.h"
-<<<<<<< Updated upstream
-=======
+﻿#include "Game_Scene_Title.h"
 #include "DX_KeyCode.h"
->>>>>>> Stashed changes
 
 namespace Game::Scene{
 
@@ -10,37 +7,30 @@ Title::Title(){}
 
 Title::~Title(){}
 
-void Title::SetDXManagerPtr( std::shared_ptr<DX::IManager>& dxManager_ ){
+void Title::SetDXManagerPtr( const std::shared_ptr<DX::IManager>& dxManager_ ){
 	dxManager = dxManager_;
 }
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 void Title::Update(){}
 
-void Title::Draw(){}
-=======
-=======
->>>>>>> Stashed changes
-void Title::Update(){
-
-}
-
-void Title::Draw(){
-<<<<<<< Updated upstream
-	dxManager->Draw( "DxLib Reversi Project", 200, 290 );
-}
->>>>>>> Stashed changes
-=======
+void Title::Draw() const{
 	if( dxManager->IsKeyDown( DX::KeyCode::D ) ){
 		dxManager->Draw( "\'D\' pressed", 200, 290 );
-	}else{
+	}
+	else{
 		dxManager->Draw( "nothing pressed", 100, 100 );
 	}
-}
->>>>>>> Stashed changes
 
-std::unique_ptr<IScene> Title::TransitionToNext(){
+	if( dxManager->LeftClickedInBox( 96, 396, 240, 430 ) ){
+		dxManager->Draw( "Left Clicked", 100, 400 );
+	}
+
+	if( dxManager->LeftClickedInBox( 296, 396, 440, 430 ) ){
+		dxManager->Draw( "Left Clicked", 300, 400 );
+	}
+}
+
+std::unique_ptr<IScene> Title::TransitionToNext() const{
 	return nullptr;
 }
 

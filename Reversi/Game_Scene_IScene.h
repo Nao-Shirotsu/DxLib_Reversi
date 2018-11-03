@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #include <memory>
 
@@ -7,32 +7,24 @@
 
 namespace Game::Scene{
 
-// SceneƒNƒ‰ƒX‚ÌƒCƒ“ƒ^[ƒtƒF[ƒX
+// Sceneã‚¯ãƒ©ã‚¹ã®ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹
 class IScene{
 public:
 	virtual ~IScene();
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-	// DxLib‚ÌŠÖ”‚ğƒV[ƒ“‚Å—˜—p‚·‚é‚½‚ß‚É
-=======
-	// DxLib‚ÌŠÖ”‚ğƒV[ƒ“‚Å—˜—p‚·‚é‚½‚ß‚ÉÎß²İÀ‚ğæ“¾
->>>>>>> Stashed changes
-=======
-	// DxLib‚ÌŠÖ”‚ğƒV[ƒ“‚Å—˜—p‚·‚é‚½‚ß‚ÉÎß²İÀ‚ğæ“¾
->>>>>>> Stashed changes
-	virtual void SetDXManagerPtr( std::shared_ptr<DX::IManager>& dxManager ) = 0;
+	// DxLibã®é–¢æ•°ã‚’ã‚·ãƒ¼ãƒ³ã§åˆ©ç”¨ã™ã‚‹ãŸã‚ã«ï¾ï¾Ÿï½²ï¾ï¾€ã‚’å–å¾—
+	virtual void SetDXManagerPtr( const std::shared_ptr<DX::IManager>& dxManager ) = 0;
 
-	// ƒƒ“ƒo•Ï”“™‚Ìó‘Ô‚ÌƒAƒbƒvƒf[ƒg
+	// ãƒ¡ãƒ³ãƒå¤‰æ•°ç­‰ã®çŠ¶æ…‹ã®ã‚¢ãƒƒãƒ—ãƒ‡ãƒ¼ãƒˆ
 	virtual void Update() = 0;
 
-	// ‰æ–Ê‚Ö•`‰æ‚·‚é
-	virtual void Draw() = 0;
+	// ç”»é¢ã¸æç”»ã™ã‚‹
+	virtual void Draw() const = 0;
 
-	// ƒV[ƒ“‘JˆÚŠÖ”
-	// ˆá‚¤ƒV[ƒ“‚ÉˆÚs‚·‚éê‡‚Í‚»‚ÌÀ‘Ì‚ğ¶¬‚µ‚Ä•Ô‚µA
-	// ‚»‚¤‚Å‚È‚¢‚È‚çnullptr‚ğ•Ô‚·
-	virtual std::unique_ptr<IScene> TransitionToNext() = 0;
+	// ã‚·ãƒ¼ãƒ³é·ç§»é–¢æ•°
+	// é•ã†ã‚·ãƒ¼ãƒ³ã«ç§»è¡Œã™ã‚‹å ´åˆã¯ãã®å®Ÿä½“ã‚’ç”Ÿæˆã—ã¦è¿”ã—ã€
+	// ãã†ã§ãªã„ãªã‚‰nullptrã‚’è¿”ã™
+	virtual std::unique_ptr<IScene> TransitionToNext() const = 0;
 };
 
 }

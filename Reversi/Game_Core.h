@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #include <memory>
 
@@ -10,36 +10,30 @@
 
 namespace Game{
 
-// ƒQ[ƒ€ƒRƒA íX‚Ìƒ‚ƒWƒ…[ƒ‹ƒNƒ‰ƒX‚ğŠÇ—
-// 1ƒtƒŒ[ƒ€‚²‚Æ‚É•K—v‚Èˆ—‚ğs‚È‚¤
+// ã‚²ãƒ¼ãƒ ã‚³ã‚¢ ä»–ã®å„ã‚¯ãƒ©ã‚¹ã®å®Ÿä½“ã‚’æ‰€æœ‰ã—ã¦ç®¡ç†
 class Core{
 public:
 	Core();
 	~Core();
 
-	// true‚È‚çƒEƒBƒ“ƒhƒE‚ğ•Â‚¶‚ÄƒQ[ƒ€I—¹
-	bool IsGameEnd();
+	// trueãªã‚‰ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚’é–‰ã˜ã¦ã‚²ãƒ¼ãƒ çµ‚äº†
+	bool IsGameEnd() const;
 
-	// 1ƒtƒŒ[ƒ€‚²‚Æ‚É•K—v‚Èˆ—
+	// æ¯ãƒ•ãƒ¬ãƒ¼ãƒ å¿…è¦ãªå‡¦ç†
 	void Update();
 
-	// ƒQ[ƒ€‰æ–Ê‚É•`‰æ
-	void Draw();
+	// æ¯ãƒ•ãƒ¬ãƒ¼ãƒ  ã‚²ãƒ¼ãƒ ã‚’ç”»é¢ã«æç”»
+	void Draw() const;
 
 private:
 	std::unique_ptr<Game::Scene::IScene> scene;
 	std::shared_ptr<DX::IManager> dxManager;
 	std::unique_ptr<Network::Manager> networkManager;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
+
+	// ä½•ã‚‰ã‹ã®è‡´å‘½çš„ã‚¨ãƒ©ãƒ¼ã«ã‚ˆã‚Šã‚²ãƒ¼ãƒ ã‚’å¼·åˆ¶çµ‚äº†ã•ã›ã‚‹ãƒ•ãƒ©ã‚°
 	bool criticalError;
+	// ã‚²ãƒ¼ãƒ ã‚’æ­£å¸¸çµ‚äº†ã™ã‚‹ãƒ•ãƒ©ã‚°
 	bool endFlag;
->>>>>>> Stashed changes
-=======
-	bool criticalError;
-	bool endFlag;
->>>>>>> Stashed changes
 };
 
 }

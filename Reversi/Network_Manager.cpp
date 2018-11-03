@@ -1,4 +1,4 @@
-#include "Network_Manager.h"
+﻿#include "Network_Manager.h"
 
 namespace Network{
 
@@ -16,9 +16,9 @@ void Manager::SetOpponent( std::string ipAddr, int portNum ){
 	opponentPortNum = portNum;
 }
 
-void Manager::Send( std::string ){}
+void Manager::Send( std::string message ) const{}
 
-std::string Manager::Receive(){
+std::string Manager::Receive() const{
 	return "";
 }
 
