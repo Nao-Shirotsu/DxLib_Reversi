@@ -1,5 +1,4 @@
 # DxLib_Reversi
-***
 ### 概要
 *****
 このリポジトリは、ネット対戦型リバーシの開発リポジトリです。   
@@ -21,6 +20,7 @@
     ┣ .gitignore
     ┣ README.md
     ┣ Reversi.sln
+    ┣ class_layout.html
     ┗ Reversi/
         ┣ .vcxproj files
         ┣ .hpp files

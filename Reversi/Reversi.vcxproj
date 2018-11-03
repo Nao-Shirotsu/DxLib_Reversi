@@ -22,7 +22,7 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{164A80E7-419D-4F95-A856-701987483FC2}</ProjectGuid>
     <RootNamespace>Reversi</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -90,7 +90,13 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\root\usr\local\include\dxlib</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>C:\Users\root\usr\local\lib\dxlib</AdditionalLibraryDirectories>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -118,14 +124,36 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\root\usr\local\include\dxlib</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>C:\Users\root\usr\local\lib\dxlib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DX_EmptyManager.cpp" />
+    <ClCompile Include="DX_IManager.cpp" />
+    <ClCompile Include="DX_Manager.cpp" />
+    <ClCompile Include="Game_Core.cpp" />
+    <ClCompile Include="Game_Scene_IScene.cpp" />
+    <ClCompile Include="Game_Scene_Title.cpp" />
+    <ClCompile Include="Network_Manager.cpp" />
+    <ClCompile Include="Resource_Manager.cpp" />
     <ClCompile Include="WinMain.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DX_EmptyManager.h" />
+    <ClInclude Include="DX_Manager.h" />
+    <ClInclude Include="Game_Core.h" />
+    <ClInclude Include="DX_IManager.h" />
+    <ClInclude Include="Game_Scene_IScene.h" />
+    <ClInclude Include="Game_Scene_Title.h" />
+    <ClInclude Include="Network_Manager.h" />
+    <ClInclude Include="Resource_Index.h" />
+    <ClInclude Include="Resource_Manager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
