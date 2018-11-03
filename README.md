@@ -14,15 +14,15 @@
 </dl>     
 *****      
 ### ディレクトリ構成     
-    ./     
-    ┣ .gitignore     
-    ┣ README.md     
-    ┣ Reversi.sln    
-    ┣ class_layout.html    
-    ┗ Reversi/     
-        ┣ .vcxproj files     
-        ┣ .hpp files     
-        ┗ .cpp files      
+    ./
+    ┣ .gitignore
+    ┣ README.md
+    ┣ Reversi.sln
+    ┣ class_layout.html
+    ┗ Reversi/
+        ┣ .vcxproj files
+        ┣ .hpp files
+        ┗ .cpp files
 *****      
 
 ### 簡易クラス図     
