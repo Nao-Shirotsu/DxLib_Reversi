@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #include <string>
 
@@ -6,12 +6,12 @@
 
 namespace Resource{
 
-// ƒŠƒ\[ƒXƒtƒ@ƒCƒ‹–¼‚ÌŠÇ—ƒNƒ‰ƒX
+// ãƒªã‚½ãƒ¼ã‚¹ãƒ•ã‚¡ã‚¤ãƒ«åã®ç®¡ç†ã‚¯ãƒ©ã‚¹
 class Manager{
 protected:
-	// IndexŒ^‚Ì’l‚©‚çƒtƒ@ƒCƒ‹–¼(path)‚ğ•Ô‚·
-	static const char* GetPicPath( PicIndex );
-	static const char* GetSoundPath( SoundIndex );
+	// Indexå‹ã®å€¤ã‹ã‚‰ãƒ•ã‚¡ã‚¤ãƒ«å(path)ã‚’è¿”ã™
+	static const char* GetPicPath( PicIndex index );
+	static const char* GetSoundPath( SoundIndex index );
 };
 
 }

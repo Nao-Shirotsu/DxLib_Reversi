@@ -1,19 +1,19 @@
-#pragma once
+ï»¿#pragma once
 
 #include "Game_Scene_IScene.h"
 #include "Resource_Index.h"
 
 namespace Game::Scene{
 
-// ƒV[ƒ“Fƒ^ƒCƒgƒ‹‰æ–Ê
+// ã‚·ãƒ¼ãƒ³ï¼šã‚¿ã‚¤ãƒˆãƒ«ç”»é¢
 class Title : public IScene{
 public:
 	Title();
 	~Title();
-	void SetDXManagerPtr( std::shared_ptr<DX::IManager>& dxManager );
+	void SetDXManagerPtr( const std::shared_ptr<DX::IManager>& dxManager );
 	void Update();
-	void Draw();
-	std::unique_ptr<IScene> TransitionToNext();
+	void Draw() const;
+	std::unique_ptr<IScene> TransitionToNext() const;
 
 private:
 	std::shared_ptr<DX::IManager> dxManager;

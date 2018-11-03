@@ -1,11 +1,8 @@
-#pragma once
+﻿#pragma once
 
 namespace Util{
 
-<<<<<<< Updated upstream
-	char* ToCharPtr( const char* str );
-=======
+// strの値をコピーした別実体のchar*文字列を返す
 char* ToCharPtr( const char* str );
->>>>>>> Stashed changes
 
 }

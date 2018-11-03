@@ -1,60 +1,46 @@
-#pragma once
+ï»¿#pragma once
 
 #include <string>
 
 #include "Resource_Index.h"
-<<<<<<< Updated upstream
-=======
 #include "DX_KeyCode.h"
->>>>>>> Stashed changes
+
 
 namespace DX{
-// DxLibŠÖ”‚Ìƒ‰ƒbƒp[ƒNƒ‰ƒX‚ÌƒCƒ“ƒ^[ƒtƒF[ƒX
-// DxLibŠÖ”‚ğ—˜—p‚µ‚È‚¢ƒ_ƒ~[Manager‚Ì‚½‚ßAinterface‰»‚·‚é
+// DxLibé–¢æ•°ã®ãƒ©ãƒƒãƒ‘ãƒ¼ã‚¯ãƒ©ã‚¹ã®ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹
+// DxLibé–¢æ•°ã‚’åˆ©ç”¨ã—ãªã„ãƒ€ãƒŸãƒ¼Managerã®ãŸã‚ã€interfaceåŒ–ã™ã‚‹
 class IManager{
 public:
 	virtual ~IManager();
 
-	// ƒƒ“ƒo•Ï”“™‚Ìó‘Ô‚ÌƒAƒbƒvƒf[ƒg
+	// ãƒ¡ãƒ³ãƒå¤‰æ•°ç­‰ã®çŠ¶æ…‹ã®ã‚¢ãƒƒãƒ—ãƒ‡ãƒ¼ãƒˆ
 	virtual void Update() = 0;
 
-	// enum class‚Ì’l‚©‚ç—~‚µ‚¢‰æ‘œ‚ğ“Á’è‚µ‚Äƒƒ‚ƒŠ‚É“Ç‚İ‚Ş
-	virtual void Load( Resource::PicIndex index ) = 0;
-	virtual void Load( Resource::SoundIndex index ) = 0;
+	// enum classã®å€¤ã‹ã‚‰æ¬²ã—ã„ç”»åƒã‚’ç‰¹å®šã—ã¦ãƒ¡ãƒ¢ãƒªã«èª­ã¿è¾¼ã‚€
+	virtual void Load( Resource::PicIndex index ) const = 0;
+	virtual void Load( Resource::SoundIndex index ) const = 0;
 
-	// •¶š—ñ‚ğ•`‰æ
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-	virtual void Draw( std::string text ) = 0;
-=======
-	virtual void Draw( std::string text, int x, int y ) = 0;
->>>>>>> Stashed changes
-=======
-	virtual void Draw( std::string text, int x, int y ) = 0;
->>>>>>> Stashed changes
+	// æ–‡å­—åˆ—ã‚’æç”»
+	virtual void Draw( std::string text, int x, int y ) const = 0;
 
-	// *** ‰º‹L2‚Â‚ÌŠÖ”‚ÍAƒŠƒ\[ƒXƒtƒ@ƒCƒ‹‚ªƒƒ‚ƒŠ‚Éƒ[ƒh
-	// *** ‚³‚ê‚Ä‚¢‚È‚¯‚ê‚Î‚»‚ê‚ç‚Ì•`‰æ/Ä¶‚Ís‚í‚È‚¢B
+	// ãƒ­ãƒ¼ãƒ‰ã—ãŸç”»åƒãƒ•ã‚¡ã‚¤ãƒ«ã‚’æç”»ã€€ãƒ­ãƒ¼ãƒ‰æ¸ˆã§ãªã„ãªã‚‰ä½•ã‚‚ã—ãªã„
+	virtual void Draw( Resource::PicIndex index ) const = 0;
 
-	// ƒ[ƒh‚µ‚½‰æ‘œƒtƒ@ƒCƒ‹‚ğ•`‰æ
-	virtual void Draw( Resource::PicIndex index ) = 0;
+	// ãƒ­ãƒ¼ãƒ‰ã—ãŸéŸ³å£°ãƒ•ã‚¡ã‚¤ãƒ«ã‚’å†ç”Ÿã€€ãƒ­ãƒ¼ãƒ‰æ¸ˆã§ãªã„ãªã‚‰ä½•ã‚‚ã—ãªã„
+	virtual void Play( Resource::SoundIndex index ) const = 0;
 
-	// ƒ[ƒh‚µ‚½‰¹ºƒtƒ@ƒCƒ‹‚ğÄ¶
-	virtual void Play( Resource::SoundIndex index ) = 0;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
+	// è‡´å‘½çš„ãª(å®Ÿè¡Œã‚’çµ‚äº†ã™ã¹ã)ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ã¦ã„ã‚‹ã‹ã©ã†ã‹
+	virtual bool HasError() const = 0;
 
-	virtual bool HasError() = 0;
->>>>>>> Stashed changes
-=======
+	// ã‚ã‚‹ã‚­ãƒ¼ãŒæŠ¼ã•ã‚ŒãŸã‹å¼•æ•°keyã§å—ã‘å–ã£ã¦èª¿ã¹ã‚‹
+	virtual bool IsKeyDown( KeyCode key ) const = 0;
 
-	// ’v–½“I‚È(Às‚ğI—¹‚·‚×‚«)ƒGƒ‰[‚ª”­¶‚µ‚Ä‚¢‚é‚©‚Ç‚¤‚©
-	virtual bool HasError() = 0;
+	// ãƒã‚¦ã‚¹ã‚«ãƒ¼ã‚½ãƒ«ã®ä½ç½®ã‚’å–å¾—
+	virtual int GetCursolPosX() const = 0;
+	virtual int GetCursolPosY() const = 0;
 
-	// ‚ ‚éƒL[‚ª‰Ÿ‚³‚ê‚½‚©ˆø”key‚Åó‚¯æ‚Á‚Ä’²‚×‚é
-	virtual bool IsKeyDown( KeyCode key ) = 0;
->>>>>>> Stashed changes
+	// (x1, y1)ã‚’å·¦ä¸Š, (x2, y2)ã‚’å³ä¸‹ã¨ã™ã‚‹å››è§’å½¢ã®ç¯„å›²ã§å·¦ã‚¯ãƒªãƒƒã‚¯ã•ã‚ŒãŸã‹ã©ã†ã‹
+	virtual bool LeftClickedInBox( int x1, int y1, int x2, int y2 ) = 0;
 };
 
 }

@@ -1,35 +1,26 @@
-#pragma once
+ï»¿#pragma once
 
 #include "DX_IManager.h"
 
 namespace DX{
 
-// DXManagerƒNƒ‰ƒX‚ğ—p‚¢‚È‚¢‚ÌƒeƒXƒg—pƒ_ƒ~[ƒNƒ‰ƒX
-// ŠeŠÖ”‚ÍƒeƒXƒg—po—ÍˆÈŠO‚É‰½‚à‚µ‚È‚¢
+// DXManagerã‚¯ãƒ©ã‚¹ã‚’ç”¨ã„ãªã„æ™‚ã®ãƒ†ã‚¹ãƒˆç”¨ãƒ€ãƒŸãƒ¼ã‚¯ãƒ©ã‚¹
+// å„é–¢æ•°ã¯ãƒ†ã‚¹ãƒˆç”¨å‡ºåŠ›ä»¥å¤–ã«ä½•ã‚‚ã—ãªã„
 class EmptyManager : public IManager{
 public:
 	EmptyManager();
 	~EmptyManager();
 	void Update();
-	void Load( Resource::PicIndex index );
-	void Load( Resource::SoundIndex index );
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-	void Draw( std::string text );
-	void Draw( Resource::PicIndex index );
-	void Play( Resource::SoundIndex index );
-=======
-=======
->>>>>>> Stashed changes
-	void Draw( std::string text, int x, int y );
-	void Draw( Resource::PicIndex index );
-	void Play( Resource::SoundIndex index );
-	bool HasError();
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
-	bool IsKeyDown( KeyCode key );
->>>>>>> Stashed changes
+	void Load( Resource::PicIndex index ) const;
+	void Load( Resource::SoundIndex index ) const;
+	void Draw( std::string text, int x, int y ) const;
+	void Draw( Resource::PicIndex index ) const;
+	void Play( Resource::SoundIndex index ) const;
+	bool HasError() const;
+	bool IsKeyDown( KeyCode key ) const;
+	int GetCursolPosX() const;
+	int GetCursolPosY() const;
+	bool LeftClickedInBox( int x1, int y1, int x2, int y2 );
 };
 
 }

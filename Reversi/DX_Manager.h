@@ -1,53 +1,38 @@
-#pragma once
+ï»¿#pragma once
+
+#include <memory>
 
 #include "DX_IManager.h"
 #include "Resource_Manager.h"
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-#include "Util.h"
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 
 namespace DX{
 
-// DxLibŠÖ”‚Ìƒ‰ƒbƒp[ƒNƒ‰ƒX
+// DxLibé–¢æ•°ã®ãƒ©ãƒƒãƒ‘ãƒ¼ã‚¯ãƒ©ã‚¹
 class Manager : public IManager, public Resource::Manager{
 public:
 	Manager();
 	~Manager();
 	void Update();
-	void Load( Resource::PicIndex index );
-	void Load( Resource::SoundIndex index );
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-	void Draw( std::string text );
-	void Draw( Resource::PicIndex index );
-	void Play( Resource::SoundIndex index );
+	void Load( Resource::PicIndex index ) const;
+	void Load( Resource::SoundIndex index ) const;
+	void Draw( std::string text, int x, int y ) const;
+	void Draw( Resource::PicIndex index ) const;
+	void Play( Resource::SoundIndex index ) const;
+	bool HasError() const;
+	bool IsKeyDown( KeyCode key ) const;
+	bool LeftClickedInBox( int x1, int y1, int x2, int y2 );
 
 private:
-	// ˆø”‚Æ“¯‚¶•¶š—ñ‚ğ‚Âchar*Œ^‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚ğ¶¬‚µ‚Ä•Ô‚·
-	char* ToCharPtr( const char* str );
-=======
-=======
->>>>>>> Stashed changes
-	void Draw( std::string text, int x, int y );
-	void Draw( Resource::PicIndex index );
-	void Play( Resource::SoundIndex index );
-	bool HasError();
-<<<<<<< Updated upstream
+	int GetCursolPosX() const;
+	int GetCursolPosY() const;
 
-private:
-	bool dxError;
->>>>>>> Stashed changes
-=======
-	bool IsKeyDown( KeyCode key );
+	// ãƒã‚¦ã‚¹å·¦ãƒœã‚¿ãƒ³ã§ã‚¯ãƒªãƒƒã‚¯ã•ã‚ŒãŸã‹ã©ã†ã‹
+	bool IsLeftButtonDown() const;
 
-private:
 	bool dxError;
 	static inline char keyState[256];
->>>>>>> Stashed changes
+	class CursolState;
+	std::unique_ptr<CursolState> cursol;
 };
 
 }

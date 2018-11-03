@@ -1,26 +1,27 @@
-#pragma once
+ï»¿#pragma once
 
 #include <string>
 
 namespace Network{ 
 	
-// ƒlƒbƒg‘Îí‚Ì’ÊM‚ğŠÇ—‚·‚éƒNƒ‰ƒX
+// ãƒãƒƒãƒˆå¯¾æˆ¦ã®é€šä¿¡ã‚’ç®¡ç†ã™ã‚‹ã‚¯ãƒ©ã‚¹
 class Manager{
 public:
 	Manager();
 
-	// ‘Îí‘Šè‚Æ‚Ì’ÊMŒo˜H‚ğŠm—§
+	// å¯¾æˆ¦ç›¸æ‰‹ã¨ã®é€šä¿¡çµŒè·¯ã‚’ç¢ºç«‹
 	Manager( std::string ipAddr, int portNum );
 
 	~Manager();
 
+	// é€šä¿¡ã‚’ç¢ºç«‹ã™ã‚‹
 	void SetOpponent( std::string ipAddr, int portNum );
 
-	// ‘Îí‘Šè‚ÉƒƒbƒZ[ƒW‘—M
-	void Send( std::string );
+	// å¯¾æˆ¦ç›¸æ‰‹ã«ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸é€ä¿¡
+	void Send( std::string message ) const;
 
-	// ‘Îí‘Šè‚©‚çƒƒbƒZ[ƒWóM
-	std::string Receive();
+	// å¯¾æˆ¦ç›¸æ‰‹ã‹ã‚‰ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸å—ä¿¡
+	std::string Receive() const;
 
 private:
 	std::string opponentIPaddr;
