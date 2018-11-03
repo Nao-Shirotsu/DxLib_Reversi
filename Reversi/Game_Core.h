@@ -31,6 +31,11 @@ private:
 	std::shared_ptr<DX::IManager> dxManager;
 	std::unique_ptr<Network::Manager> networkManager;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+	bool criticalError;
+	bool endFlag;
+>>>>>>> Stashed changes
 =======
 	bool criticalError;
 	bool endFlag;

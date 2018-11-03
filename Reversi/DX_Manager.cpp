@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #include "DX_Manager.h"
 #include "Network_Manager.h"
 
@@ -10,10 +11,16 @@ Manager::~Manager(){}
 
 void Manager::Update(){}
 =======
+=======
+>>>>>>> Stashed changes
 #include "DxLib.h"
 
 #include "DX_Manager.h"
 #include "Network_Manager.h"
+<<<<<<< Updated upstream
+=======
+#include "Util.h"
+>>>>>>> Stashed changes
 
 namespace{
 	constexpr int WINDOW_WIDTH_X = 800;
@@ -25,6 +32,10 @@ namespace DX{
 
 Manager::Manager() : dxError( false ){
 	ChangeWindowMode( TRUE );
+<<<<<<< Updated upstream
+=======
+	SetDrawScreen( DX_SCREEN_BACK );
+>>>>>>> Stashed changes
 	SetGraphMode( WINDOW_WIDTH_X, WINDOW_WIDTH_Y, COLOR_BIT_NUM );
 	SetMainWindowText( Util::ToCharPtr( "リバーシ　オンライン対戦" ) );
 	dxError = DxLib_Init();
@@ -36,6 +47,11 @@ Manager::~Manager(){
 
 void Manager::Update(){
 	dxError = ProcessMessage();
+<<<<<<< Updated upstream
+}
+>>>>>>> Stashed changes
+=======
+	GetHitKeyStateAll( keyState );
 }
 >>>>>>> Stashed changes
 
@@ -46,11 +62,20 @@ void Manager::Load( Resource::PicIndex index ){
 void Manager::Load( Resource::SoundIndex index ){}
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 void Manager::Draw( std::string text ){}
 =======
 void Manager::Draw( std::string text, int x, int y ){
 	// 白色を取得
 	unsigned int color = GetColor( 255, 255, 255 );
+	DrawString( x, y, Util::ToCharPtr( text.c_str() ), color );
+}
+>>>>>>> Stashed changes
+=======
+void Manager::Draw( std::string text, int x, int y ){
+	ScreenFlip();
+	ClearDrawScreen();
+	unsigned int color = GetColor( 255, 255, 255 ); //白色
 	DrawString( x, y, Util::ToCharPtr( text.c_str() ), color );
 }
 >>>>>>> Stashed changes
@@ -60,11 +85,20 @@ void Manager::Draw( Resource::PicIndex index ){}
 void Manager::Play( Resource::SoundIndex index ){}
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 char * Manager::ToCharPtr( const char* str ){
 	return nullptr;
 =======
 bool Manager::HasError(){
 	return dxError;
+>>>>>>> Stashed changes
+=======
+bool Manager::HasError(){
+	return dxError;
+}
+
+bool Manager::IsKeyDown( KeyCode key ){
+	return keyState[static_cast<int>( key )];
 >>>>>>> Stashed changes
 }
 

@@ -13,7 +13,11 @@ public:
 	virtual ~IScene();
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	// DxLibの関数をシーンで利用するために
+=======
+	// DxLibの関数をシーンで利用するためにﾎﾟｲﾝﾀを取得
+>>>>>>> Stashed changes
 =======
 	// DxLibの関数をシーンで利用するためにﾎﾟｲﾝﾀを取得
 >>>>>>> Stashed changes
