@@ -1,6 +1,10 @@
 .vs/
 Debug/
 Release/
+<<<<<<< Updated upstream
+=======
+x64/
+>>>>>>> Stashed changes
 GoogleTest/
 packages/
 SceneTransitionTest/

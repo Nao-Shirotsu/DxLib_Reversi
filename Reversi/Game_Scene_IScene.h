@@ -12,7 +12,11 @@ class IScene{
 public:
 	virtual ~IScene();
 
+<<<<<<< Updated upstream
 	// DxLibの関数をシーンで利用するために
+=======
+	// DxLibの関数をシーンで利用するためにﾎﾟｲﾝﾀを取得
+>>>>>>> Stashed changes
 	virtual void SetDXManagerPtr( std::shared_ptr<DX::IManager>& dxManager ) = 0;
 
 	// メンバ変数等の状態のアップデート

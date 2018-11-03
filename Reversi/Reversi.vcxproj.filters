@@ -15,6 +15,12 @@
     </Filter>
     <Filter Include="Network">
       <UniqueIdentifier>{dcd9f7bc-e144-40f5-a73a-e780374f8aac}</UniqueIdentifier>
+<<<<<<< Updated upstream
+=======
+    </Filter>
+    <Filter Include="Util">
+      <UniqueIdentifier>{0517a484-a097-4a82-830d-3a4bcce45e5d}</UniqueIdentifier>
+>>>>>>> Stashed changes
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -43,6 +49,12 @@
     <ClCompile Include="Network_Manager.cpp">
       <Filter>Network</Filter>
     </ClCompile>
+<<<<<<< Updated upstream
+=======
+    <ClCompile Include="Util.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+>>>>>>> Stashed changes
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource_Index.h">
@@ -72,5 +84,11 @@
     <ClInclude Include="Network_Manager.h">
       <Filter>Network</Filter>
     </ClInclude>
+<<<<<<< Updated upstream
+=======
+    <ClInclude Include="Util.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+>>>>>>> Stashed changes
   </ItemGroup>
 </Project>

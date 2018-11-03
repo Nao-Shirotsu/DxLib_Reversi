@@ -142,6 +142,10 @@
     <ClCompile Include="Game_Scene_Title.cpp" />
     <ClCompile Include="Network_Manager.cpp" />
     <ClCompile Include="Resource_Manager.cpp" />
+<<<<<<< Updated upstream
+=======
+    <ClCompile Include="Util.cpp" />
+>>>>>>> Stashed changes
     <ClCompile Include="WinMain.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -154,6 +158,10 @@
     <ClInclude Include="Network_Manager.h" />
     <ClInclude Include="Resource_Index.h" />
     <ClInclude Include="Resource_Manager.h" />
+<<<<<<< Updated upstream
+=======
+    <ClInclude Include="Util.h" />
+>>>>>>> Stashed changes
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

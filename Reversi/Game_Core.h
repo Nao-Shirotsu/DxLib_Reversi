@@ -30,6 +30,11 @@ private:
 	std::unique_ptr<Game::Scene::IScene> scene;
 	std::shared_ptr<DX::IManager> dxManager;
 	std::unique_ptr<Network::Manager> networkManager;
+<<<<<<< Updated upstream
+=======
+	bool criticalError;
+	bool endFlag;
+>>>>>>> Stashed changes
 };
 
 }
