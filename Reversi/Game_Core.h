@@ -1,6 +1,7 @@
 ﻿#pragma once
 
 #include <memory>
+#include <stack>
 
 #include "Game_Scene_IScene.h"
 #include "Game_Scene_Title.h"
@@ -26,14 +27,12 @@ public:
 	void Draw() const;
 
 private:
-	std::unique_ptr<Game::Scene::IScene> scene;
+	// sceneStackに積まれているすべてのリソースを解放
+	void DestructAllSceneObjects();
+
+	std::stack<std::unique_ptr<Game::Scene::IScene>> sceneStack;
 	std::shared_ptr<DX::IManager> dxManager;
 	std::unique_ptr<Network::Manager> networkManager;
-
-	// 何らかの致命的エラーによりゲームを強制終了させるフラグ
-	bool criticalError;
-	// ゲームを正常終了するフラグ
-	bool endFlag;
 };
 
 }

@@ -5,11 +5,11 @@
 
 namespace Game::Scene{
 
-// シーン：タイトル画面
-class Title : public IScene{
+// シーン：タイトルへ戻る
+class ReturnToTitle : public IScene{
 public:
-	Title();
-	~Title();
+	ReturnToTitle();
+	~ReturnToTitle();
 	void SetDXManagerPtr( std::shared_ptr<DX::IManager>& dxManager );
 	void Update();
 	void Draw() const;

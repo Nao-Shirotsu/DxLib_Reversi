@@ -1,10 +1,10 @@
 ﻿#pragma once
 
 #include <string>
+#include <memory>
 
 #include "Resource_Index.h"
 #include "DX_KeyCode.h"
-
 
 namespace DX{
 // DxLib関数のラッパークラスのインターフェース
@@ -13,20 +13,29 @@ class IManager{
 public:
 	virtual ~IManager();
 
-	// メンバ変数等の状態のアップデート
+	// メンバ変数等の状態のアップデート 1フレームに1回実行
 	virtual void Update() = 0;
+
+	// 画面に描画処理 1フレームに1回実行
+	virtual void Draw() const = 0;
 
 	// enum classの値から欲しい画像を特定してメモリに読み込む
 	virtual void Load( Resource::PicIndex index ) const = 0;
 	virtual void Load( Resource::SoundIndex index ) const = 0;
 
 	// 文字列を描画
-	virtual void Draw( std::string text, int x, int y ) const = 0;
+	virtual void DrawStr( const std::string& text, int x, int y ) const = 0;
 
-	// ロードした画像ファイルを描画　ロード済でないなら何もしない
-	virtual void Draw( Resource::PicIndex index ) const = 0;
+	// (x1, y1)を左上頂点,(x2, y2)を右下頂点とする四角形を描画
+	virtual void DrawRect( int x1, int y1, int x2, int y2 ) const = 0;
 
-	// ロードした音声ファイルを再生　ロード済でないなら何もしない
+	// *** 下記2つの関数は、リソースファイルがメモリにロード
+	// *** されていなければそれらの描画/再生は行わない。
+
+	// ロードした画像ファイルを描画
+	virtual void DrawPic( Resource::PicIndex index ) const = 0;
+
+	// ロードした音声ファイルを再生
 	virtual void Play( Resource::SoundIndex index ) const = 0;
 
 	// 致命的な(実行を終了すべき)エラーが発生しているかどうか

@@ -34,12 +34,6 @@
     <ClCompile Include="DX_Manager.cpp">
       <Filter>DX</Filter>
     </ClCompile>
-    <ClCompile Include="Game_Scene_IScene.cpp">
-      <Filter>Game\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="Game_Scene_Title.cpp">
-      <Filter>Game\Scene</Filter>
-    </ClCompile>
     <ClCompile Include="Game_Core.cpp">
       <Filter>Game</Filter>
     </ClCompile>
@@ -48,6 +42,48 @@
     </ClCompile>
     <ClCompile Include="Util.cpp">
       <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="Game_Scene_Achievements.cpp">
+      <Filter>Game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Game_Scene_GameOver.cpp">
+      <Filter>Game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Game_Scene_GamePlay.cpp">
+      <Filter>Game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Game_Scene_GuestMatching.cpp">
+      <Filter>Game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Game_Scene_HostMatching.cpp">
+      <Filter>Game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Game_Scene_IScene.cpp">
+      <Filter>Game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Game_Scene_PlayingRecord.cpp">
+      <Filter>Game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Game_Scene_ScoreBoard.cpp">
+      <Filter>Game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Game_Scene_Title.cpp">
+      <Filter>Game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Game_Scene_Pause.cpp">
+      <Filter>Game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Game_Scene_ReturnToTitle.cpp">
+      <Filter>Game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Game_Scene_Disconnection.cpp">
+      <Filter>Game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Game_Scene_Settings.cpp">
+      <Filter>Game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Game_Scene_Error.cpp">
+      <Filter>Game\Scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -69,12 +105,6 @@
     <ClInclude Include="DX_Manager.h">
       <Filter>DX</Filter>
     </ClInclude>
-    <ClInclude Include="Game_Scene_IScene.h">
-      <Filter>Game\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="Game_Scene_Title.h">
-      <Filter>Game\Scene</Filter>
-    </ClInclude>
     <ClInclude Include="Network_Manager.h">
       <Filter>Network</Filter>
     </ClInclude>
@@ -83,6 +113,51 @@
     </ClInclude>
     <ClInclude Include="DX_KeyCode.h">
       <Filter>DX</Filter>
+    </ClInclude>
+    <ClInclude Include="Game_Scene_Achievements.h">
+      <Filter>Game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Game_Scene_GameOver.h">
+      <Filter>Game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Game_Scene_GamePlay.h">
+      <Filter>Game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Game_Scene_GuestMatching.h">
+      <Filter>Game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Game_Scene_HostMatching.h">
+      <Filter>Game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Game_Scene_IScene.h">
+      <Filter>Game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Game_Scene_PlayingRecord.h">
+      <Filter>Game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Game_Scene_ScoreBoard.h">
+      <Filter>Game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Game_Scene_Title.h">
+      <Filter>Game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Game_Scene_Pause.h">
+      <Filter>Game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Game_Scene_ReturnToTitle.h">
+      <Filter>Game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Game_Scene_Disconnection.h">
+      <Filter>Game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Game_Scene_Settings.h">
+      <Filter>Game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Game_SceneID.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Game_Scene_Error.h">
+      <Filter>Game\Scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

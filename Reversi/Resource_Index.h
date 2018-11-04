@@ -1,10 +1,10 @@
-#pragma once
+ï»¿#pragma once
 
 namespace Resource{
 
-// ‘¼‚ÌƒR[ƒh’†‚Å‰½‚Ì‰æ‘œ‚ğg‚¤‚©•ª‚©‚è‚â‚·‚­‚·‚é‚½‚ß‚Ì
-// ¯•Êq‚Æ‚µ‚Äenum class‚ğ’è‹`
-// Resource::Manager‚Ì2‚Â‚Ì”z—ñ(.cpp“à)‚Ì—v‘f”Ô†‚Æˆê’v‚³‚¹‚é
+// ä»–ã®ã‚³ãƒ¼ãƒ‰ä¸­ã§ä½•ã®ç”»åƒã‚’ä½¿ã†ã‹åˆ†ã‹ã‚Šã‚„ã™ãã™ã‚‹ãŸã‚ã®
+// è­˜åˆ¥å­ã¨ã—ã¦enum classã‚’å®šç¾©
+// Resource::Managerã®2ã¤ã®é…åˆ—(.cppå†…)ã®è¦ç´ ç•ªå·ã¨ä¸€è‡´ã•ã›ã‚‹
 
 enum class PicIndex{
 	Samurai = 0,

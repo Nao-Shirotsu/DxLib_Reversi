@@ -19,9 +19,10 @@
     ┣ Reversi.sln
     ┣ class_layout.html
     ┗ Reversi/
-        ┣ .vcxproj files
-        ┣ .hpp files
-        ┗ .cpp files     
+        ┣ .vcxprojファイル
+        ┣ .hppファイル
+        ┗ .cppファイル
 
-### 簡易クラス図     
+### 簡易クラス図
+*****
 https://www.draw.io/?state=%7B%22ids%22:%5B%221os6jmgaY9mQSG6IveKT7JAhYQKW6Pzgs%22%5D,%22action%22:%22open%22,%22userId%22:%22108296671641419360529%22%7D#G1os6jmgaY9mQSG6IveKT7JAhYQKW6Pzgs

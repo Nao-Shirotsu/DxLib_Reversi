@@ -4,10 +4,9 @@ namespace Network{
 
 Manager::Manager(){}
 
-Manager::Manager( std::string ipAddr, int portNum ){
-	opponentIPaddr = ipAddr;
-	opponentPortNum = portNum;
-}
+Manager::Manager( std::string ipAddr, int portNum ):
+	opponentIPaddr( ipAddr ),
+	opponentPortNum( portNum ){}
 
 Manager::~Manager(){}
 
