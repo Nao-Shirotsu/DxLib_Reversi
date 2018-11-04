@@ -5,11 +5,11 @@
 
 namespace Game::Scene{
 
-// シーン：タイトル画面
-class Title : public IScene{
+// シーン：マッチング(ゲスト)
+class GuestMatching : public IScene{
 public:
-	Title();
-	~Title();
+	GuestMatching();
+	~GuestMatching();
 	void SetDXManagerPtr( std::shared_ptr<DX::IManager>& dxManager );
 	void Update();
 	void Draw() const;

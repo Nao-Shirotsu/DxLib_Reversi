@@ -135,11 +135,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Game_Scene_Achievements.cpp" />
     <ClCompile Include="DX_EmptyManager.cpp" />
     <ClCompile Include="DX_IManager.cpp" />
     <ClCompile Include="DX_Manager.cpp" />
     <ClCompile Include="Game_Core.cpp" />
+    <ClCompile Include="Game_Scene_Disconnection.cpp" />
+    <ClCompile Include="Game_Scene_Error.cpp" />
+    <ClCompile Include="Game_Scene_GameOver.cpp" />
+    <ClCompile Include="Game_Scene_GamePlay.cpp" />
+    <ClCompile Include="Game_Scene_GuestMatching.cpp" />
+    <ClCompile Include="Game_Scene_HostMatching.cpp" />
     <ClCompile Include="Game_Scene_IScene.cpp" />
+    <ClCompile Include="Game_Scene_Pause.cpp" />
+    <ClCompile Include="Game_Scene_PlayingRecord.cpp" />
+    <ClCompile Include="Game_Scene_ReturnToTitle.cpp" />
+    <ClCompile Include="Game_Scene_ScoreBoard.cpp" />
+    <ClCompile Include="Game_Scene_Settings.cpp" />
     <ClCompile Include="Game_Scene_Title.cpp" />
     <ClCompile Include="Network_Manager.cpp" />
     <ClCompile Include="Resource_Manager.cpp" />
@@ -147,12 +159,25 @@
     <ClCompile Include="WinMain.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Game_SceneID.h" />
+    <ClInclude Include="Game_Scene_Achievements.h" />
     <ClInclude Include="DX_EmptyManager.h" />
     <ClInclude Include="DX_KeyCode.h" />
     <ClInclude Include="DX_Manager.h" />
     <ClInclude Include="Game_Core.h" />
     <ClInclude Include="DX_IManager.h" />
+    <ClInclude Include="Game_Scene_Disconnection.h" />
+    <ClInclude Include="Game_Scene_Error.h" />
+    <ClInclude Include="Game_Scene_GameOver.h" />
+    <ClInclude Include="Game_Scene_GamePlay.h" />
+    <ClInclude Include="Game_Scene_GuestMatching.h" />
+    <ClInclude Include="Game_Scene_HostMatching.h" />
     <ClInclude Include="Game_Scene_IScene.h" />
+    <ClInclude Include="Game_Scene_Pause.h" />
+    <ClInclude Include="Game_Scene_PlayingRecord.h" />
+    <ClInclude Include="Game_Scene_ReturnToTitle.h" />
+    <ClInclude Include="Game_Scene_ScoreBoard.h" />
+    <ClInclude Include="Game_Scene_Settings.h" />
     <ClInclude Include="Game_Scene_Title.h" />
     <ClInclude Include="Network_Manager.h" />
     <ClInclude Include="Resource_Index.h" />

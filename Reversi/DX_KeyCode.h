@@ -1,8 +1,8 @@
-#pragma once
+Ôªø#pragma once
 
 namespace DX{
 
-enum class KeyCode{ // ÉLÅ[íËã`
+enum class KeyCode{ // „Ç≠„ÉºÂÆöÁæ©
 	Esc = 0x01, // Esc D_DIK_ESCAPE
 	_1, // D_DIK_1
 	_2, // D_DIK_2
@@ -17,7 +17,7 @@ enum class KeyCode{ // ÉLÅ[íËã`
 
 	BackSpace = 0x0E, // BackSpace D_DIK_BACK
 	Return = 0x1C, // Enter D_DIK_RETURN
-	Space = 0x39, // ÉXÉyÅ[ÉX D_DIK_SPACE
+	Space = 0x39, // „Çπ„Éö„Éº„Çπ D_DIK_SPACE
 
 	Insert = 0xD2, // Insert D_DIK_INSERT
 	Delete = 0xD3, // Delete D_DIK_DELETE
@@ -28,35 +28,35 @@ enum class KeyCode{ // ÉLÅ[íËã`
 
 	Tab = 0x0F, // Tab D_DIK_TAB
 	CapsLock = 0x3A, //CapsLock D_DIK_CAPSLOCK
-	AppMenu = 0xDD, // ÉAÉvÉäÉPÅ[ÉVÉáÉìÉÅÉjÉÖÅ[ D_DIK_APPS
+	AppMenu = 0xDD, // „Ç¢„Éó„É™„Ç±„Éº„Ç∑„Éß„É≥„É°„Éã„É•„Éº D_DIK_APPS
 
 	PrintScreen = 0xB7, // PrintScreen D_DIK_SYSRQ
 	ScrollLock = 0x46, // ScrollLock D_DIK_SCROLL
 	Pause = 0xC5, // PauseBreak D_DIK_PAUSE
 
-	LShift = 0x2A, //ç∂Shift D_DIK_LSHIFT
-	RShift = 0x36, // âEShift D_DIK_RSHIFT
-	Ctrl_Left = 0x1D, // ç∂Ctrl D_DIK_LCONTROL
-	Ctrl_Right = 0x9D, // âECtrl D_DIK_RCONTROL
-	Alt_Left = 0x38, // ç∂Alt D_DIK_LALT
-	Alt_Right = 0xB8, // âEAlt D_DIK_RALT
-	Win_Left = 0xDB, // ç∂Win D_DIK_LWIN
-	Win_Right = 0xDC, // âEWin D_DIK_RWIN
+	LShift = 0x2A, //Â∑¶Shift D_DIK_LSHIFT
+	RShift = 0x36, // Âè≥Shift D_DIK_RSHIFT
+	Ctrl_Left = 0x1D, // Â∑¶Ctrl D_DIK_LCONTROL
+	Ctrl_Right = 0x9D, // Âè≥Ctrl D_DIK_RCONTROL
+	Alt_Left = 0x38, // Â∑¶Alt D_DIK_LALT
+	Alt_Right = 0xB8, // Âè≥Alt D_DIK_RALT
+	Win_Left = 0xDB, // Â∑¶Win D_DIK_LWIN
+	Win_Right = 0xDC, // Âè≥Win D_DIK_RWIN
 
-	Allow_Left = 0xCB, // ç∂ D_DIK_LEFT
-	Allow_Up = 0xC8, // è„ D_DIK_UP
-	Allow_Right = 0xCD, // âE D_DIK_RIGHT
-	Allow_Down = 0xD0, // â∫ D_DIK_DOWN
+	Allow_Left = 0xCB, // Â∑¶ D_DIK_LEFT
+	Allow_Up = 0xC8, // ‰∏ä D_DIK_UP
+	Allow_Right = 0xCD, // Âè≥ D_DIK_RIGHT
+	Allow_Down = 0xD0, // ‰∏ã D_DIK_DOWN
 
-	Kanji = 0x94, // äøéö D_DIK_KANJI
-	Henkan = 0x79, // ïœä∑ D_DIK_CONVERT
-	Muhenkan = 0x7B, // ñ≥ïœä∑ D_DIK_NOCONVERT
-	Kana = 0x70, // ÉJÉi D_DIK_KANA
+	Kanji = 0x94, // Êº¢Â≠ó D_DIK_KANJI
+	Henkan = 0x79, // Â§âÊèõ D_DIK_CONVERT
+	Muhenkan = 0x7B, // ÁÑ°Â§âÊèõ D_DIK_NOCONVERT
+	Kana = 0x70, // „Ç´„Éä D_DIK_KANA
 
 	Minus = 0x0C, // - D_DIK_MINUS
 	Slash = 0x35, // / D_DIK_SLASH  
-	Yen = 0x7D, // Åè D_DIK_YEN
-	BackSlash = 0x2B, // Å_ D_DIK_BACKSLASH
+	Yen = 0x7D, // Ôø• D_DIK_YEN
+	BackSlash = 0x2B, // Ôºº D_DIK_BACKSLASH
 	Caret = 0x90, // ^ D_DIK_PREVTRACK
 	Period = 0x34, // . D_DIK_PERIOD
 	SemiColon = 0x27, // ; D_DIK_SEMICOLON
@@ -66,23 +66,23 @@ enum class KeyCode{ // ÉLÅ[íËã`
 	AtMark = 0x91, // @ D_DIK_AT
 	Comma = 0x33, // , D_DIK_COMMA
 
-	NumLock = 0x45, // ÉeÉìÉLÅ[NumLock D_DIK_NUMLOCK
-	Num_0 = 0x52, // ÉeÉìÉLÅ[0 D_DIK_NUMPAD0
-	Num_1 = 0x4F, // ÉeÉìÉLÅ[1 D_DIK_NUMPAD1
-	Num_2 = 0x50, // ÉeÉìÉLÅ[2 D_DIK_NUMPAD2
-	Num_3 = 0x51, // ÉeÉìÉLÅ[3 D_DIK_NUMPAD3
-	Num_4 = 0x4B, // ÉeÉìÉLÅ[4 D_DIK_NUMPAD4
-	Num_5 = 0x4C, // ÉeÉìÉLÅ[5 D_DIK_NUMPAD5
-	Num_6 = 0x4D, // ÉeÉìÉLÅ[6 D_DIK_NUMPAD6
-	Num_7 = 0x47, // ÉeÉìÉLÅ[7 D_DIK_NUMPAD7
-	Num_8 = 0x48, // ÉeÉìÉLÅ[8 D_DIK_NUMPAD8
-	Num_9 = 0x49, // ÉeÉìÉLÅ[9 D_DIK_NUMPAD9
-	Num_Asterisk = 0x37, // ÉeÉìÉLÅ[* D_DIK_MULTIPLY
-	Num_Add = 0x4E, // ÉeÉìÉLÅ[+ D_DIK_ADD
-	Num_Hyphen = 0x4A, // ÉeÉìÉLÅ[-  D_DIK_SUBTRACT
-	Num_Dot = 0x53, // ÉeÉìÉLÅ[. D_DIK_DECIMAL
-	Num_Slash = 0xB5, // ÉeÉìÉLÅ[/ D_DIK_DIVIDE
-	Num_Enter = 0x9C, // ÉeÉìÉLÅ[ÇÃÉGÉìÉ^Å[ D_DIK_NUMPADENTER
+	NumLock = 0x45, // „ÉÜ„É≥„Ç≠„ÉºNumLock D_DIK_NUMLOCK
+	Num_0 = 0x52, // „ÉÜ„É≥„Ç≠„Éº0 D_DIK_NUMPAD0
+	Num_1 = 0x4F, // „ÉÜ„É≥„Ç≠„Éº1 D_DIK_NUMPAD1
+	Num_2 = 0x50, // „ÉÜ„É≥„Ç≠„Éº2 D_DIK_NUMPAD2
+	Num_3 = 0x51, // „ÉÜ„É≥„Ç≠„Éº3 D_DIK_NUMPAD3
+	Num_4 = 0x4B, // „ÉÜ„É≥„Ç≠„Éº4 D_DIK_NUMPAD4
+	Num_5 = 0x4C, // „ÉÜ„É≥„Ç≠„Éº5 D_DIK_NUMPAD5
+	Num_6 = 0x4D, // „ÉÜ„É≥„Ç≠„Éº6 D_DIK_NUMPAD6
+	Num_7 = 0x47, // „ÉÜ„É≥„Ç≠„Éº7 D_DIK_NUMPAD7
+	Num_8 = 0x48, // „ÉÜ„É≥„Ç≠„Éº8 D_DIK_NUMPAD8
+	Num_9 = 0x49, // „ÉÜ„É≥„Ç≠„Éº9 D_DIK_NUMPAD9
+	Num_Asterisk = 0x37, // „ÉÜ„É≥„Ç≠„Éº* D_DIK_MULTIPLY
+	Num_Add = 0x4E, // „ÉÜ„É≥„Ç≠„Éº+ D_DIK_ADD
+	Num_Hyphen = 0x4A, // „ÉÜ„É≥„Ç≠„Éº-  D_DIK_SUBTRACT
+	Num_Dot = 0x53, // „ÉÜ„É≥„Ç≠„Éº. D_DIK_DECIMAL
+	Num_Slash = 0xB5, // „ÉÜ„É≥„Ç≠„Éº/ D_DIK_DIVIDE
+	Num_Enter = 0x9C, // „ÉÜ„É≥„Ç≠„Éº„ÅÆ„Ç®„É≥„Çø„Éº D_DIK_NUMPADENTER
 
 	F1 = 0x3B, // D_DIK_F1
 	F2, // D_DIK_F2

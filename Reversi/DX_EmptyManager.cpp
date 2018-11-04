@@ -2,37 +2,25 @@
 
 namespace DX{
 
-EmptyManager::EmptyManager(){
-	
-}
+EmptyManager::EmptyManager(){}
 
-EmptyManager::~EmptyManager(){
+EmptyManager::~EmptyManager(){}
 
-}
+void EmptyManager::Update(){}
 
-void EmptyManager::Update(){
+void EmptyManager::Draw() const{}
 
-}
+void EmptyManager::Load( Resource::PicIndex index ) const{}
 
-void EmptyManager::Load( Resource::PicIndex index ) const{
+void EmptyManager::Load( Resource::SoundIndex index ) const{}
 
-}
+void EmptyManager::DrawStr( const std::string& text, int x, int y ) const{}
 
-void EmptyManager::Load( Resource::SoundIndex index ) const{
+void EmptyManager::DrawRect( int x1, int y1, int x2, int y2 ) const{}
 
-}
+void EmptyManager::DrawPic( Resource::PicIndex index ) const{}
 
-void EmptyManager::Draw( std::string text, int x, int y ) const{
-
-}
-
-void EmptyManager::Draw( Resource::PicIndex index ) const{
-
-}
-
-void EmptyManager::Play( Resource::SoundIndex index ) const{
-
-}
+void EmptyManager::Play( Resource::SoundIndex index ) const{}
 
 bool EmptyManager::HasError() const{
 	return false;

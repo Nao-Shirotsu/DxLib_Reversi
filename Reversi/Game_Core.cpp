@@ -3,32 +3,48 @@
 namespace Game{
 
 Core::Core():
-	scene( std::make_unique<Scene::Title>() ),
 	dxManager( std::make_shared<DX::Manager>() ),
-	networkManager( nullptr ),
-	criticalError( false ),
-	endFlag( false ){
-	scene->SetDXManagerPtr( dxManager );
-	criticalError = dxManager->HasError();
+	networkManager( nullptr ){
+	sceneStack.push( std::make_unique<Scene::Title>() );
+	sceneStack.top()->SetDXManagerPtr( dxManager );
 }
 
 Core::~Core(){}
 
 bool Core::IsGameEnd() const{
-	return false;
+	return dxManager->HasError();
 }
 
 void Core::Update(){
-	std::unique_ptr<Scene::IScene>&& nextScene = scene->TransitionToNext();
-	if( nextScene ){
-		scene = std::move( nextScene );
+	if( sceneStack.top()->NeedsTransition() ){
+		auto&& nextScene = sceneStack.top()->TransitionToNext();
+		if( nextScene ){
+			if( nextScene->GetSceneID() == Game::SceneID::Title ){
+				// ゲームが一周プレイされてしてタイトル画面に戻ってくる直前
+				// Titleシーンの実体を生成する前にsceneStackを空にする
+				DestructAllSceneObjects();
+			}
+
+			nextScene->SetDXManagerPtr( dxManager );
+			sceneStack.push( std::move( nextScene ) );
+		}
+		else{
+			sceneStack.pop();
+		}
 	}
 	dxManager->Update();
-	scene->Update();
+	sceneStack.top()->Update();
 }
 
 void Core::Draw() const{
-	scene->Draw();
+	dxManager->Draw();
+	sceneStack.top()->Draw();
+}
+
+void Core::DestructAllSceneObjects(){
+	while( !sceneStack.empty() ){
+		sceneStack.pop();
+	}
 }
 	
 }

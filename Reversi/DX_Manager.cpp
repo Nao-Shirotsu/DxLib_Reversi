@@ -1,8 +1,8 @@
 ﻿#include <iostream>
 
 #include "DxLib.h"
+
 #include "DX_Manager.h"
-#include "Network_Manager.h"
 #include "Util.h"
 
 namespace{
@@ -15,6 +15,7 @@ namespace{
 	constexpr int TRUE_WINDOW_MODE = TRUE;
 	constexpr int SCREEN_BACK = DX_SCREEN_BACK;
 	constexpr int NO_FILL = FALSE;
+	constexpr int COLOR_WHITE = 0xffffffff;
 }
 
 namespace DX{
@@ -64,29 +65,26 @@ void Manager::Update(){
 	GetMousePoint( &cursol->posX, &cursol->posY );
 }
 
+void Manager::Draw() const{
+	ScreenFlip();
+	ClearDrawScreen();
+}
+
 void Manager::Load( Resource::PicIndex index ) const{
 	Resource::Manager::GetPicPath( index );
 }
 
 void Manager::Load( Resource::SoundIndex index ) const{}
 
-void Manager::Draw( std::string text, int x, int y ) const{
-	ScreenFlip();
-	ClearDrawScreen();
-	const unsigned int& white = GetColor( 255, 255, 255 ); //白色
-	DrawString( x, y, Util::ToCharPtr( text.c_str() ), white );
-
-	// following : test code
-	DrawBox( 96, 396, 240, 430, white, NO_FILL );
-	DrawBox( 296, 396, 440, 430, white, NO_FILL );
-	clsDx();
-	printfDx( "(%d, %d)\n", cursol->lastClicking_posX, cursol->lastClicking_posY );
-	printfDx( " ClickLog : %d\n", cursol->clickLogType );
-	printfDx( " ClickFlag : %d\n", cursol->clickFlag );
-	printfDx( " ClickState : %d\n", cursol->clickButton );
+void Manager::DrawStr( const std::string& text, int x, int y ) const{
+	DrawString( x, y, Util::ToCharPtr( text.c_str() ), COLOR_WHITE );
 }
 
-void Manager::Draw( Resource::PicIndex index ) const{}
+void Manager::DrawRect( int x1, int y1, int x2, int y2 ) const{
+	DrawBox( x1, y1, x2, y2, COLOR_WHITE, NO_FILL );
+}
+
+void Manager::DrawPic( Resource::PicIndex index ) const{}
 
 void Manager::Play( Resource::SoundIndex index ) const{}
 

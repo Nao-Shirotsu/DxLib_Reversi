@@ -5,11 +5,11 @@
 
 namespace Game::Scene{
 
-// シーン：タイトル画面
-class Title : public IScene{
+// シーン：スコアボード
+class ScoreBoard : public IScene{
 public:
-	Title();
-	~Title();
+	ScoreBoard();
+	~ScoreBoard();
 	void SetDXManagerPtr( std::shared_ptr<DX::IManager>& dxManager );
 	void Update();
 	void Draw() const;
@@ -20,7 +20,6 @@ private:
 	Game::SceneID GetSceneID() const;
 
 	std::shared_ptr<DX::IManager> dxManager;
-	Game::SceneID nextSceneID;
 };
 
 }
