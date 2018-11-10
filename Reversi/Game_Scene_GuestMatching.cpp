@@ -43,6 +43,10 @@ bool GuestMatching::NeedsTransition(){
 	return false;
 }
 
+bool GuestMatching::IsTitleScene(){
+	return false;
+}
+
 std::unique_ptr<IScene> GuestMatching::TransitionToNext() const{
 	switch( nextSceneID ){
 		case Game::SceneID::Title:

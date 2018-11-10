@@ -43,6 +43,10 @@ bool HostMatching::NeedsTransition(){
 	return false;
 }
 
+bool HostMatching::IsTitleScene(){
+	return false;
+}
+
 std::unique_ptr<IScene> HostMatching::TransitionToNext() const{
 	switch( nextSceneID ){
 		case Game::SceneID::Title:

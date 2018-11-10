@@ -22,6 +22,10 @@ bool Error::NeedsTransition(){
 	return false;
 }
 
+bool Error::IsTitleScene(){
+	return false;
+}
+
 std::unique_ptr<IScene> Error::TransitionToNext() const{
 	return nullptr;
 }

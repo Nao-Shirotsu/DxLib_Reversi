@@ -4,9 +4,7 @@
 #include <stack>
 
 #include "Game_Scene_IScene.h"
-#include "Game_Scene_Title.h"
 #include "DX_IManager.h"
-#include "DX_Manager.h"
 #include "Network_Manager.h"
 
 namespace Game{
@@ -14,7 +12,7 @@ namespace Game{
 // ゲームコア 他の各クラスの実体を所有して管理
 class Core{
 public:
-	Core();
+	explicit Core();
 	~Core();
 
 	// trueならウィンドウを閉じてゲーム終了

@@ -30,6 +30,10 @@ bool ScoreBoard::NeedsTransition(){
 	return false;
 }
 
+bool ScoreBoard::IsTitleScene(){
+	return false;
+}
+
 std::unique_ptr<IScene> ScoreBoard::TransitionToNext() const{
 	return nullptr;
 }

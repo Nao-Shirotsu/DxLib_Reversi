@@ -30,6 +30,10 @@ bool Disconnection::NeedsTransition(){
 	return false;
 }
 
+bool Disconnection::IsTitleScene(){
+	return false;
+}
+
 std::unique_ptr<IScene> Disconnection::TransitionToNext() const{
 	return std::make_unique<Title>();
 }
