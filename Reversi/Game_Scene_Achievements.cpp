@@ -30,6 +30,10 @@ bool Achievements::NeedsTransition(){
 	return false;
 }
 
+bool Achievements::IsTitleScene(){
+	return false;
+}
+
 std::unique_ptr<IScene> Achievements::TransitionToNext() const{
 	return nullptr;
 }

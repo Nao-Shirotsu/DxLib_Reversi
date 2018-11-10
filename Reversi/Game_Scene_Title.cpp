@@ -69,6 +69,10 @@ bool Title::NeedsTransition(){
 	return false;
 }
 
+bool Title::IsTitleScene(){
+	return true;
+}
+
 std::unique_ptr<IScene> Title::TransitionToNext() const{
 	switch( nextSceneID ){
 		case Game::SceneID::Achievements :

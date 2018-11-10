@@ -60,6 +60,10 @@ bool GamePlay::NeedsTransition(){
 	return false;
 }
 
+bool GamePlay::IsTitleScene(){
+	return false;
+}
+
 std::unique_ptr<IScene> GamePlay::TransitionToNext() const{
 	switch( nextSceneID ){
 		case Game::SceneID::ScoreBoard:

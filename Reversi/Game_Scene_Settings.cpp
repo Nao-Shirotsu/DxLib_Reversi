@@ -30,6 +30,10 @@ bool Settings::NeedsTransition(){
 	return false;
 }
 
+bool Settings::IsTitleScene(){
+	return false;
+}
+
 std::unique_ptr<IScene> Settings::TransitionToNext() const{
 	return nullptr;
 }

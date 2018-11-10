@@ -1,10 +1,13 @@
 ﻿#include "Game_Core.h"
+#include "Game_Scene_Title.h"
+#include "DX_EmptyManager.h"
+#include "DX_Manager.h"
 
 namespace Game{
 
 Core::Core():
-	dxManager( std::make_shared<DX::Manager>() ),
-	networkManager( nullptr ){
+	networkManager( nullptr ),
+	dxManager( std::make_shared<DX::Manager>() ){
 	sceneStack.push( std::make_unique<Scene::Title>() );
 	sceneStack.top()->SetDXManagerPtr( dxManager );
 }
@@ -19,7 +22,7 @@ void Core::Update(){
 	if( sceneStack.top()->NeedsTransition() ){
 		auto&& nextScene = sceneStack.top()->TransitionToNext();
 		if( nextScene ){
-			if( nextScene->GetSceneID() == Game::SceneID::Title ){
+			if( nextScene->IsTitleScene() ){
 				// ゲームが一周プレイされてしてタイトル画面に戻ってくる直前
 				// Titleシーンの実体を生成する前にsceneStackを空にする
 				DestructAllSceneObjects();

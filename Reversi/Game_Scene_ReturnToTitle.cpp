@@ -42,6 +42,10 @@ bool ReturnToTitle::NeedsTransition(){
 	return false;
 }
 
+bool ReturnToTitle::IsTitleScene(){
+	return false;
+}
+
 std::unique_ptr<IScene> ReturnToTitle::TransitionToNext() const{
 	switch( nextSceneID ){
 		case Game::SceneID::Pause :

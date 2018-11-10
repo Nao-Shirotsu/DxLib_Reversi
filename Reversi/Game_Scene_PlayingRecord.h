@@ -14,6 +14,7 @@ public:
 	void Update();
 	void Draw() const;
 	bool NeedsTransition();
+	bool IsTitleScene();
 	std::unique_ptr<IScene> TransitionToNext() const;
 
 private:

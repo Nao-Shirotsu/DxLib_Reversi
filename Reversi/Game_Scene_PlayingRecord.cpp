@@ -30,6 +30,10 @@ bool PlayingRecord::NeedsTransition(){
 	return false;
 }
 
+bool PlayingRecord::IsTitleScene(){
+	return false;
+}
+
 std::unique_ptr<IScene> PlayingRecord::TransitionToNext() const{
 	return nullptr;
 }

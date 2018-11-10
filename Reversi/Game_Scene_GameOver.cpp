@@ -30,6 +30,10 @@ bool GameOver::NeedsTransition(){
 	return false;
 }
 
+bool GameOver::IsTitleScene(){
+	return false;
+}
+
 std::unique_ptr<IScene> GameOver::TransitionToNext() const{
 	return std::make_unique<Title>();
 }
