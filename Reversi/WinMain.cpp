@@ -1,4 +1,4 @@
-﻿#include "DxLib.h"
+﻿#include <windows.h>
 #include "Game_Core.h"
 
 int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow ){

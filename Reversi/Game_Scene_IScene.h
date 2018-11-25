@@ -1,20 +1,22 @@
 ﻿#pragma once
 
 #include <memory>
+#include <unordered_map>
 
 #include "Resource_Index.h"
-#include "DX_IManager.h"
+#include "DX_Core.h"
 #include "Game_SceneID.h"
+#include "DX_Object_ClickButton.h"
 
 namespace Game::Scene{
 
-// Sceneクラスのインターフェース
+// 全てのSceneクラスの基底クラス
 class IScene{
 public:
 	virtual ~IScene();
 
 	// DxLibの関数をシーンで利用するためにﾎﾟｲﾝﾀを取得 (Dependency Injection)
-	virtual void SetDXManagerPtr( std::shared_ptr<DX::IManager>& dxManager ) = 0;
+	virtual void SetDXManagerPtr( std::shared_ptr<DX::UtilManager> dxManager ) = 0;
 
 	// メンバ変数等の状態のアップデート
 	virtual void Update() = 0;
@@ -37,6 +39,11 @@ protected:
 	// どのシーンの実体であるか確認するため、
 	// シーンごとに固有のenum classなIDを返す
 	virtual Game::SceneID GetSceneID() const = 0;
+
+	void DrawAllClickButtons() const;
+
+	// クリックボタンを格納
+	std::unordered_map<Game::SceneID, DX::Object::ClickButton> clickbuttons;
 };
 
 }

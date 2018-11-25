@@ -4,7 +4,7 @@
 #include <stack>
 
 #include "Game_Scene_IScene.h"
-#include "DX_IManager.h"
+#include "DX_Core.h"
 #include "Network_Manager.h"
 
 namespace Game{
@@ -29,7 +29,7 @@ private:
 	void DestructAllSceneObjects();
 
 	std::stack<std::unique_ptr<Game::Scene::IScene>> sceneStack;
-	std::shared_ptr<DX::IManager> dxManager;
+	std::shared_ptr<DX::Core> dxManager;
 	std::unique_ptr<Network::Manager> networkManager;
 };
 

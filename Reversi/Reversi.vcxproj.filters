@@ -19,20 +19,14 @@
     <Filter Include="Util">
       <UniqueIdentifier>{0517a484-a097-4a82-830d-3a4bcce45e5d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="DX\Object">
+      <UniqueIdentifier>{e8d9fc53-6f23-4cf5-b9b2-fcc046665b91}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinMain.cpp" />
     <ClCompile Include="Resource_Manager.cpp">
       <Filter>Resource</Filter>
-    </ClCompile>
-    <ClCompile Include="DX_IManager.cpp">
-      <Filter>DX</Filter>
-    </ClCompile>
-    <ClCompile Include="DX_EmptyManager.cpp">
-      <Filter>DX</Filter>
-    </ClCompile>
-    <ClCompile Include="DX_Manager.cpp">
-      <Filter>DX</Filter>
     </ClCompile>
     <ClCompile Include="Game_Core.cpp">
       <Filter>Game</Filter>
@@ -85,6 +79,21 @@
     <ClCompile Include="Game_Scene_Error.cpp">
       <Filter>Game\Scene</Filter>
     </ClCompile>
+    <ClCompile Include="DX_Object_ClickButton.cpp">
+      <Filter>DX\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="DX_MouseCursol.cpp">
+      <Filter>DX</Filter>
+    </ClCompile>
+    <ClCompile Include="DX_UnsettableMouseCursol.cpp">
+      <Filter>DX</Filter>
+    </ClCompile>
+    <ClCompile Include="DX_UtilManager.cpp">
+      <Filter>DX</Filter>
+    </ClCompile>
+    <ClCompile Include="DX_Core.cpp">
+      <Filter>DX</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource_Index.h">
@@ -95,15 +104,6 @@
     </ClInclude>
     <ClInclude Include="Resource_Manager.h">
       <Filter>Resource</Filter>
-    </ClInclude>
-    <ClInclude Include="DX_IManager.h">
-      <Filter>DX</Filter>
-    </ClInclude>
-    <ClInclude Include="DX_EmptyManager.h">
-      <Filter>DX</Filter>
-    </ClInclude>
-    <ClInclude Include="DX_Manager.h">
-      <Filter>DX</Filter>
     </ClInclude>
     <ClInclude Include="Network_Manager.h">
       <Filter>Network</Filter>
@@ -158,6 +158,24 @@
     </ClInclude>
     <ClInclude Include="Game_Scene_Error.h">
       <Filter>Game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="DX_Object_ClickButton.h">
+      <Filter>DX\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="DX_ConstantValues.h">
+      <Filter>DX</Filter>
+    </ClInclude>
+    <ClInclude Include="DX_MouseCursol.h">
+      <Filter>DX</Filter>
+    </ClInclude>
+    <ClInclude Include="DX_UnsettableMouseCursol.h">
+      <Filter>DX</Filter>
+    </ClInclude>
+    <ClInclude Include="DX_UtilManager.h">
+      <Filter>DX</Filter>
+    </ClInclude>
+    <ClInclude Include="DX_Core.h">
+      <Filter>DX</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,13 +1,13 @@
 ﻿#include "Game_Core.h"
 #include "Game_Scene_Title.h"
-#include "DX_EmptyManager.h"
-#include "DX_Manager.h"
+#include "DX_Core.h"
+#include "DX_Core.h"
 
 namespace Game{
 
 Core::Core():
 	networkManager( nullptr ),
-	dxManager( std::make_shared<DX::Manager>() ){
+	dxManager( std::make_shared<DX::Core>() ){
 	sceneStack.push( std::make_unique<Scene::Title>() );
 	sceneStack.top()->SetDXManagerPtr( dxManager );
 }
@@ -42,6 +42,7 @@ void Core::Update(){
 void Core::Draw() const{
 	dxManager->Draw();
 	sceneStack.top()->Draw();
+	dxManager->DrawStr( "sceneStack: " + std::to_string( sceneStack.size() ), 650, 0 );
 }
 
 void Core::DestructAllSceneObjects(){

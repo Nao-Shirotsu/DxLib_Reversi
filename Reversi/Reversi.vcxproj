@@ -135,10 +135,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DX_MouseCursol.cpp" />
+    <ClCompile Include="DX_Object_ClickButton.cpp" />
+    <ClCompile Include="DX_UnsettableMouseCursol.cpp" />
+    <ClCompile Include="DX_UtilManager.cpp" />
     <ClCompile Include="Game_Scene_Achievements.cpp" />
-    <ClCompile Include="DX_EmptyManager.cpp" />
-    <ClCompile Include="DX_IManager.cpp" />
-    <ClCompile Include="DX_Manager.cpp" />
+    <ClCompile Include="DX_Core.cpp" />
     <ClCompile Include="Game_Core.cpp" />
     <ClCompile Include="Game_Scene_Disconnection.cpp" />
     <ClCompile Include="Game_Scene_Error.cpp" />
@@ -159,13 +161,15 @@
     <ClCompile Include="WinMain.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DX_ConstantValues.h" />
+    <ClInclude Include="DX_UtilManager.h" />
+    <ClInclude Include="DX_MouseCursol.h" />
+    <ClInclude Include="DX_Object_ClickButton.h" />
     <ClInclude Include="Game_SceneID.h" />
     <ClInclude Include="Game_Scene_Achievements.h" />
-    <ClInclude Include="DX_EmptyManager.h" />
     <ClInclude Include="DX_KeyCode.h" />
-    <ClInclude Include="DX_Manager.h" />
     <ClInclude Include="Game_Core.h" />
-    <ClInclude Include="DX_IManager.h" />
+    <ClInclude Include="DX_Core.h" />
     <ClInclude Include="Game_Scene_Disconnection.h" />
     <ClInclude Include="Game_Scene_Error.h" />
     <ClInclude Include="Game_Scene_GameOver.h" />
@@ -182,6 +186,7 @@
     <ClInclude Include="Network_Manager.h" />
     <ClInclude Include="Resource_Index.h" />
     <ClInclude Include="Resource_Manager.h" />
+    <ClInclude Include="DX_UnsettableMouseCursol.h" />
     <ClInclude Include="Util.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -10,17 +10,17 @@ class HostMatching : public IScene{
 public:
 	HostMatching();
 	~HostMatching();
-	void SetDXManagerPtr( std::shared_ptr<DX::IManager>& dxManager );
-	void Update();
-	void Draw() const;
-	bool NeedsTransition();
-	bool IsTitleScene();
-	std::unique_ptr<IScene> TransitionToNext() const;
+	void SetDXManagerPtr( std::shared_ptr<DX::UtilManager> dxManager ) override;
+	void Update() override;
+	void Draw() const override;
+	bool NeedsTransition() override;
+	bool IsTitleScene() override;
+	std::unique_ptr<IScene> TransitionToNext() const override;
 
 private:
-	Game::SceneID GetSceneID() const;
+	Game::SceneID GetSceneID() const override;
 
-	std::shared_ptr<DX::IManager> dxManager;
+	std::shared_ptr<DX::UtilManager> dxManager;
 	Game::SceneID nextSceneID;
 };
 

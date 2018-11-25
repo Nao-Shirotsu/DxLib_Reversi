@@ -5,26 +5,26 @@
 
 namespace Game::Scene{
 
-PlayingRecord::PlayingRecord(){}
+PlayingRecord::PlayingRecord(){
+	using namespace Game;
+	clickbuttons[SceneID::Title] = DX::Object::ClickButton( dxManager, "タイトルへ戻る", 100, 100 );
+}
 
 PlayingRecord::~PlayingRecord(){}
 
-void PlayingRecord::SetDXManagerPtr( std::shared_ptr<DX::IManager>& dxManager_ ){
+void PlayingRecord::SetDXManagerPtr( std::shared_ptr<DX::UtilManager> dxManager_ ){
 	dxManager = dxManager_;
 }
 
 void PlayingRecord::Update(){}
 
 void PlayingRecord::Draw() const{
-	dxManager->DrawStr( "Scene::PlayingRecord", 0, 0 );
-	dxManager->DrawStr( "Click any scene to move there.", 0, 15 );
-
-	dxManager->DrawRect( 98, 98, 240, 130 );
-	dxManager->DrawStr( "Title", 100, 100 );
+	dxManager->DrawStr( "総合戦績", 0, 0 );
+	DrawAllClickButtons();
 }
 
 bool PlayingRecord::NeedsTransition(){
-	if( dxManager->LeftClickedInBox( 98, 98, 240, 130 ) ){
+	if( clickbuttons[SceneID::Title].WasLeftClicked() ){
 		return true;
 	}
 	return false;

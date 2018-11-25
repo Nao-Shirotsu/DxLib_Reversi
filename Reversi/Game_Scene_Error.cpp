@@ -8,14 +8,14 @@ Error::Error(){}
 
 Error::~Error(){}
 
-void Error::SetDXManagerPtr( std::shared_ptr<DX::IManager>& dxManager_ ){
+void Error::SetDXManagerPtr( std::shared_ptr<DX::UtilManager> dxManager_ ){
 	dxManager = dxManager_;
 }
 
 void Error::Update(){}
 
 void Error::Draw() const{
-	dxManager->DrawStr( "GAME CRASHED : ゲームを終了してください。", 100, 290 );
+	dxManager->DrawStr( "\"GAME CRASHED\" ゲームを終了してください。", 100, 290 );
 }
 
 bool Error::NeedsTransition(){

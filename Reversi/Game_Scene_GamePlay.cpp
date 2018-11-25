@@ -10,50 +10,45 @@
 namespace Game::Scene{
 
 GamePlay::GamePlay():
-	nextSceneID( Game::SceneID::GamePlay ){}
+	nextSceneID( Game::SceneID::GamePlay ){
+	using namespace Game;
+
+	clickbuttons[SceneID::ScoreBoard] = DX::Object::ClickButton( dxManager, "スコアボード", 100, 100 );
+	clickbuttons[SceneID::Disconnection] = DX::Object::ClickButton( dxManager, "通信切断", 400, 100 );
+	clickbuttons[SceneID::Pause] = DX::Object::ClickButton( dxManager, "ポーズ", 100, 300 );
+	clickbuttons[SceneID::GameOver] = DX::Object::ClickButton( dxManager, "ゲームオーバー", 400, 300 );
+}
 
 GamePlay::~GamePlay(){}
 
-void GamePlay::SetDXManagerPtr( std::shared_ptr<DX::IManager>& dxManager_ ){
+void GamePlay::SetDXManagerPtr( std::shared_ptr<DX::UtilManager> dxManager_ ){
 	dxManager = dxManager_;
 }
 
 void GamePlay::Update(){}
 
 void GamePlay::Draw() const{
-	dxManager->DrawStr( "Scene::GamePlay", 0, 0 );
-	dxManager->DrawStr( "Click any scene to move there.", 0, 15 );
-
-	dxManager->DrawRect( 98, 98, 240, 130 );
-	dxManager->DrawStr( "ScoreBoard", 100, 100 );
-
-	dxManager->DrawRect( 98, 298, 240, 330 );
-	dxManager->DrawStr( "Disconnection", 100, 300 );
-
-	dxManager->DrawRect( 398, 98, 540, 130 );
-	dxManager->DrawStr( "Pause",400, 100 );
-
-	dxManager->DrawRect( 398, 298, 540, 330 );
-	dxManager->DrawStr( "GameOver", 400, 300 );
+	dxManager->DrawStr( "対局中...", 0, 0 );
+	DrawAllClickButtons();
 }
 
 bool GamePlay::NeedsTransition(){
-	if( dxManager->LeftClickedInBox( 98, 98, 240, 130 ) ){
+	if( clickbuttons[SceneID::ScoreBoard].WasLeftClicked() ){
 		nextSceneID = Game::SceneID::ScoreBoard;
 		return true;
 	}
 
-	if( dxManager->LeftClickedInBox( 98, 298, 240, 330 ) ){
+	if( clickbuttons[SceneID::Disconnection].WasLeftClicked() ){
 		nextSceneID = Game::SceneID::Disconnection;
 		return true;
 	}
 
-	if( dxManager->LeftClickedInBox( 398, 98, 540, 130 ) ){
+	if( clickbuttons[SceneID::Pause].WasLeftClicked() ){
 		nextSceneID = Game::SceneID::Pause;
 		return true;
 	}
 
-	if( dxManager->LeftClickedInBox( 398, 298, 540, 330 ) ){
+	if( clickbuttons[SceneID::GameOver].WasLeftClicked() ){
 		nextSceneID = Game::SceneID::GameOver;
 		return true;
 	}
