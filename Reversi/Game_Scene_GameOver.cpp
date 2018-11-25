@@ -5,26 +5,27 @@
 
 namespace Game::Scene{
 
-GameOver::GameOver(){}
+GameOver::GameOver(){
+	using namespace Game;
+	clickbuttons[SceneID::Title] = DX::Object::ClickButton( dxManager, "タイトルへ戻る", 100, 100 );
+}
 
 GameOver::~GameOver(){}
 
-void GameOver::SetDXManagerPtr( std::shared_ptr<DX::IManager>& dxManager_ ){
+void GameOver::SetDXManagerPtr( std::shared_ptr<DX::UtilManager> dxManager_ ){
 	dxManager = dxManager_;
 }
 
 void GameOver::Update(){}
 
 void GameOver::Draw() const{
-	dxManager->DrawStr( "Scene::GameOver", 0, 0 );
-	dxManager->DrawStr( "Click any scene to move there.", 0, 15 );
-
-	dxManager->DrawRect( 98, 98, 240, 130 );
-	dxManager->DrawStr( "Title", 100, 100 );
+	dxManager->DrawStr( "ゲームオーバー！", 100, 60 );
+	DrawAllClickButtons();
 }
 
 bool GameOver::NeedsTransition(){
-	if( dxManager->LeftClickedInBox( 98, 98, 240, 130 ) ){
+	using namespace Game;
+	if( clickbuttons[SceneID::Title].WasLeftClicked() ){
 		return true;
 	}
 	return false;

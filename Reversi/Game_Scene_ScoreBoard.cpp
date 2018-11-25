@@ -5,26 +5,26 @@
 
 namespace Game::Scene{
 
-ScoreBoard::ScoreBoard(){}
+ScoreBoard::ScoreBoard(){
+	using namespace Game;
+	clickbuttons[SceneID::GamePlay] = DX::Object::ClickButton( dxManager, "ゲームに戻る", 100, 100 );
+}
 
 ScoreBoard::~ScoreBoard(){}
 
-void ScoreBoard::SetDXManagerPtr( std::shared_ptr<DX::IManager>& dxManager_ ){
+void ScoreBoard::SetDXManagerPtr( std::shared_ptr<DX::UtilManager> dxManager_ ){
 	dxManager = dxManager_;
 }
 
 void ScoreBoard::Update(){}
 
 void ScoreBoard::Draw() const{
-	dxManager->DrawStr( "Scene::ScoreBoard", 0, 0 );
-	dxManager->DrawStr( "Click any scene to move there.", 0, 15 );
-
-	dxManager->DrawRect( 98, 98, 240, 130 );
-	dxManager->DrawStr( "GamePlay", 100, 100 );
+	dxManager->DrawStr( "スコアボード", 0, 0 );
+	DrawAllClickButtons();
 }
 
 bool ScoreBoard::NeedsTransition(){
-	if( dxManager->LeftClickedInBox( 98, 98, 240, 130 ) ){
+	if( clickbuttons[SceneID::GamePlay].WasLeftClicked() ){
 		return true;
 	}
 	return false;

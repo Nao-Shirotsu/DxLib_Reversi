@@ -5,26 +5,27 @@
 
 namespace Game::Scene{
 
-Disconnection::Disconnection(){}
+Disconnection::Disconnection(){
+	using namespace Game;
+	clickbuttons[SceneID::Title] = DX::Object::ClickButton( dxManager, "タイトルへ戻る", 100, 100 );
+}
 
 Disconnection::~Disconnection(){}
 
-void Disconnection::SetDXManagerPtr( std::shared_ptr<DX::IManager>& dxManager_ ){
+void Disconnection::SetDXManagerPtr( std::shared_ptr<DX::UtilManager> dxManager_ ){
 	dxManager = dxManager_;
 }
 
 void Disconnection::Update(){}
 
 void Disconnection::Draw() const{
-	dxManager->DrawStr( "Scene::Disconnection", 0, 0 );
-	dxManager->DrawStr( "Click any scene to move there.", 0, 15 );
-
-	dxManager->DrawRect( 98, 98, 240, 130 );
-	dxManager->DrawStr( "Title", 100, 100 );
+	dxManager->DrawStr( "通信が切断されました", 100, 60 );
+	DrawAllClickButtons();
 }
 
 bool Disconnection::NeedsTransition(){
-	if( dxManager->LeftClickedInBox( 98, 98, 240, 130 ) ){
+	using namespace Game;
+	if( clickbuttons[SceneID::Title].WasLeftClicked() ){
 		return true;
 	}
 	return false;

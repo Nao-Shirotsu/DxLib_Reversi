@@ -11,59 +11,54 @@
 namespace Game::Scene{
 
 Title::Title():
-	nextSceneID( Game::SceneID::Title ){}
+	nextSceneID( Game::SceneID::Title ){
+	using namespace Game;
+
+	clickbuttons[SceneID::Achievements]  = DX::Object::ClickButton( dxManager, "実績一覧", 100, 100 );
+	clickbuttons[SceneID::PlayingRecord] = DX::Object::ClickButton( dxManager, "総合戦績", 400, 100 );
+	clickbuttons[SceneID::Settings]		 = DX::Object::ClickButton( dxManager, "システム設定", 250, 200 );
+	clickbuttons[SceneID::GuestMatching] = DX::Object::ClickButton( dxManager, "対戦(ゲスト)", 100, 300 );
+	clickbuttons[SceneID::HostMatching]  = DX::Object::ClickButton( dxManager, "対戦(ホスト)", 400, 300 );
+}
 
 Title::~Title(){}
 
-void Title::SetDXManagerPtr( std::shared_ptr<DX::IManager>& dxManager_ ){
+void Title::SetDXManagerPtr( std::shared_ptr<DX::UtilManager> dxManager_ ){
 	dxManager = dxManager_;
 }
 
 void Title::Update(){}
 
 void Title::Draw() const{
-	dxManager->DrawStr( "Current Scene : Title", 0, 0 );
-	dxManager->DrawStr( "Click any scene to move there.", 0, 15 );
-
-	dxManager->DrawRect( 98, 98, 240, 130 );
-	dxManager->DrawStr( "Achievements", 100, 100 );
-
-	dxManager->DrawRect( 398, 98, 540, 130 );
-	dxManager->DrawStr( "PlayingRecord", 400, 100 );
-
-	dxManager->DrawRect( 248, 198, 390, 230 );
-	dxManager->DrawStr( "Settings", 250, 200 );
-
-	dxManager->DrawRect( 98, 298, 240, 330 );
-	dxManager->DrawStr( "GuestMatching", 100, 300 );
-
-	dxManager->DrawRect( 398, 298, 540, 330 );
-	dxManager->DrawStr( "HostMatching", 400, 300 );
+	dxManager->DrawStr( "タイトル", 0, 0 );
+	DrawAllClickButtons();
 }
 
 bool Title::NeedsTransition(){
-	if( dxManager->LeftClickedInBox( 98, 98, 240, 130 ) ){
-		nextSceneID = Game::SceneID::Achievements;
+	using namespace Game;
+
+	if( clickbuttons[SceneID::Achievements].WasLeftClicked() ){
+		nextSceneID = SceneID::Achievements;
 		return true;
 	}
 
-	if( dxManager->LeftClickedInBox( 398, 98, 540, 130 ) ){
-		nextSceneID = Game::SceneID::PlayingRecord;
+	if( clickbuttons[SceneID::PlayingRecord].WasLeftClicked() ){
+		nextSceneID = SceneID::PlayingRecord;
 		return true;
 	}
 
-	if( dxManager->LeftClickedInBox( 248, 198, 390, 230 ) ){
-		nextSceneID = Game::SceneID::Settings;
+	if( clickbuttons[SceneID::Settings].WasLeftClicked() ){
+		nextSceneID = SceneID::Settings;
 		return true;
 	}
 
-	if( dxManager->LeftClickedInBox( 98, 298, 240, 330 ) ){
-		nextSceneID = Game::SceneID::GuestMatching;
+	if( clickbuttons[SceneID::GuestMatching].WasLeftClicked() ){
+		nextSceneID = SceneID::GuestMatching;
 		return true;
 	}
 
-	if( dxManager->LeftClickedInBox( 398, 298, 540, 330 ) ){
-		nextSceneID = Game::SceneID::HostMatching;
+	if( clickbuttons[SceneID::HostMatching].WasLeftClicked() ){
+		nextSceneID = SceneID::HostMatching;
 		return true;
 	}
 	return false;
@@ -74,20 +69,22 @@ bool Title::IsTitleScene(){
 }
 
 std::unique_ptr<IScene> Title::TransitionToNext() const{
+	using namespace Game;
+
 	switch( nextSceneID ){
-		case Game::SceneID::Achievements :
+		case SceneID::Achievements :
 			return std::make_unique<Achievements>();
 
-		case Game::SceneID::PlayingRecord :
+		case SceneID::PlayingRecord :
 			return std::make_unique<PlayingRecord>();
 
-		case Game::SceneID::Settings :
+		case SceneID::Settings :
 			return std::make_unique<Settings>();
 
-		case Game::SceneID::GuestMatching :
+		case SceneID::GuestMatching :
 			return std::make_unique<GuestMatching>();
 
-		case Game::SceneID::HostMatching :
+		case SceneID::HostMatching :
 			return std::make_unique<HostMatching>();
 
 		default :

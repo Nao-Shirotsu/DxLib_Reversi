@@ -5,26 +5,27 @@
 
 namespace Game::Scene{
 
-Achievements::Achievements(){}
+Achievements::Achievements(){
+	using namespace Game;
+	clickbuttons[SceneID::Title] = DX::Object::ClickButton( dxManager, "タイトルへ戻る", 100, 100 );
+}
 
 Achievements::~Achievements(){}
 
-void Achievements::SetDXManagerPtr( std::shared_ptr<DX::IManager>& dxManager_ ){
+void Achievements::SetDXManagerPtr( std::shared_ptr<DX::UtilManager> dxManager_ ){
 	dxManager = dxManager_;
 }
 
 void Achievements::Update(){}
 
 void Achievements::Draw() const{
-	dxManager->DrawStr( "Scene::Achievements", 0, 0 );
-	dxManager->DrawStr( "Click any scene to move there.", 0, 15 );
-
-	dxManager->DrawRect( 98, 98, 240, 130 );
-	dxManager->DrawStr( "Title", 100, 100 );
+	dxManager->DrawStr( "実績一覧", 0, 0 );
+	DrawAllClickButtons();
 }
 
 bool Achievements::NeedsTransition(){
-	if( dxManager->LeftClickedInBox( 98, 98, 240, 130 ) ){
+	using namespace Game;
+	if( clickbuttons[SceneID::Title].WasLeftClicked() ){
 		return true;
 	}
 	return false;

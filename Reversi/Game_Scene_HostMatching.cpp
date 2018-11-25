@@ -8,34 +8,32 @@
 namespace Game::Scene{
 
 HostMatching::HostMatching():
-	nextSceneID( Game::SceneID::HostMatching ){}
+	nextSceneID( Game::SceneID::HostMatching ){
+	using namespace Game;
+	clickbuttons[SceneID::Title] = DX::Object::ClickButton( dxManager, "タイトルへ戻る", 100, 100 );
+	clickbuttons[SceneID::GamePlay] = DX::Object::ClickButton( dxManager, "マッチング完了", 400, 300 );
+}
 
 HostMatching::~HostMatching(){}
 
-void HostMatching::SetDXManagerPtr( std::shared_ptr<DX::IManager>& dxManager_ ){
+void HostMatching::SetDXManagerPtr( std::shared_ptr<DX::UtilManager> dxManager_ ){
 	dxManager = dxManager_;
 }
 
 void HostMatching::Update(){}
 
 void HostMatching::Draw() const{
-	dxManager->DrawStr( "Scene::HostMatching", 0, 0 );
-	dxManager->DrawStr( "Click any scene to move there.", 0, 15 );
-
-	dxManager->DrawRect( 98, 98, 240, 130 );
-	dxManager->DrawStr( "Title", 100, 100 );
-
-	dxManager->DrawRect( 98, 298, 240, 330 );
-	dxManager->DrawStr( "GamePlay", 100, 300 );
+	dxManager->DrawStr( "対戦相手を待っています...", 100, 60 );
+	DrawAllClickButtons();
 }
 
 bool HostMatching::NeedsTransition(){
-	if( dxManager->LeftClickedInBox( 98, 98, 240, 130 ) ){
+	if( clickbuttons[SceneID::Title].WasLeftClicked() ){
 		nextSceneID = Game::SceneID::Title;
 		return true;
 	}
 
-	if( dxManager->LeftClickedInBox( 98, 298, 240, 330 ) ){
+	if( clickbuttons[SceneID::GamePlay].WasLeftClicked() ){
 		nextSceneID = Game::SceneID::GamePlay;
 		return true;
 	}

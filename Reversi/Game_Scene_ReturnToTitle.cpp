@@ -8,34 +8,31 @@
 namespace Game::Scene{
 
 ReturnToTitle::ReturnToTitle():
-	nextSceneID( Game::SceneID::ReturnToTitle ){}
+	nextSceneID( Game::SceneID::ReturnToTitle ){
+	using namespace Game;
+	clickbuttons[SceneID::Title] = DX::Object::ClickButton( dxManager, "タイトルへ戻る", 100, 100 );
+}
 
 ReturnToTitle::~ReturnToTitle(){}
 
-void ReturnToTitle::SetDXManagerPtr( std::shared_ptr<DX::IManager>& dxManager_ ){
+void ReturnToTitle::SetDXManagerPtr( std::shared_ptr<DX::UtilManager> dxManager_ ){
 	dxManager = dxManager_;
 }
 
 void ReturnToTitle::Update(){}
 
 void ReturnToTitle::Draw() const{
-	dxManager->DrawStr( "Scene::ReturnToTitle", 0, 0 );
-	dxManager->DrawStr( "Click any scene to move there.", 0, 15 );
-
-	dxManager->DrawRect( 98, 98, 240, 130 );
-	dxManager->DrawStr( "Pause", 100, 100 );
-
-	dxManager->DrawRect( 398, 298, 540, 330 );
-	dxManager->DrawStr( "Title", 400, 300 );
+	dxManager->DrawStr( "通信を切断してタイトルに戻りますか？", 100, 60 );
+	DrawAllClickButtons();
 }
 
 bool ReturnToTitle::NeedsTransition(){
-	if( dxManager->LeftClickedInBox( 98, 98, 240, 130 ) ){
+	if( clickbuttons[SceneID::Pause].WasLeftClicked() ){
 		nextSceneID = Game::SceneID::Pause;
 		return true;
 	}
 
-	if( dxManager->LeftClickedInBox( 398, 298, 540, 330 ) ){
+	if( clickbuttons[SceneID::Title].WasLeftClicked() ){
 		nextSceneID = Game::SceneID::Title;
 		return true;
 	}
