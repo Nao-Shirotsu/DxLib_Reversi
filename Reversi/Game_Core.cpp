@@ -42,6 +42,7 @@ void Core::Update(){
 void Core::Draw() const{
 	dxManager->Draw();
 	sceneStack.top()->Draw();
+	dxManager->DrawStr( "sceneStack: " + std::to_string( sceneStack.size() ), 650, 0 );
 }
 
 void Core::DestructAllSceneObjects(){

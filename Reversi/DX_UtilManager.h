@@ -45,7 +45,7 @@ public:
 
 protected:
 	static inline char keyState[256];
-	static std::shared_ptr<MouseCursol> cursol;
+	static std::unique_ptr<MouseCursol> cursol;
 };
 
 }

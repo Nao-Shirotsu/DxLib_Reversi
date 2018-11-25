@@ -10,7 +10,8 @@ namespace Game::Scene{
 ReturnToTitle::ReturnToTitle():
 	nextSceneID( Game::SceneID::ReturnToTitle ){
 	using namespace Game;
-	clickbuttons[SceneID::Title] = DX::Object::ClickButton( dxManager, "タイトルへ戻る", 100, 100 );
+	clickbuttons[SceneID::Title] = DX::Object::ClickButton( dxManager, "切断する", 300, 100 );
+	clickbuttons[SceneID::Pause] = DX::Object::ClickButton( dxManager, "ゲームに戻る", 100, 100 );
 }
 
 ReturnToTitle::~ReturnToTitle(){}
@@ -22,7 +23,7 @@ void ReturnToTitle::SetDXManagerPtr( std::shared_ptr<DX::UtilManager> dxManager_
 void ReturnToTitle::Update(){}
 
 void ReturnToTitle::Draw() const{
-	dxManager->DrawStr( "通信を切断してタイトルに戻りますか？", 100, 60 );
+	dxManager->DrawStr( "通信を切断しますか？", 100, 60 );
 	DrawAllClickButtons();
 }
 

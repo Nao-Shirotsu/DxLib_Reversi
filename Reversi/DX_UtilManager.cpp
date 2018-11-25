@@ -6,10 +6,9 @@
 
 namespace DX{
 
-std::shared_ptr<MouseCursol> UtilManager::cursol = std::make_shared<MouseCursol>();
+std::unique_ptr<MouseCursol> UtilManager::cursol = std::make_unique<MouseCursol>();
 
-UtilManager::UtilManager()/*:
-	cursol( std::make_shared<MouseCursol>() )*/{}
+UtilManager::UtilManager(){}
 
 UtilManager::~UtilManager(){}
 
