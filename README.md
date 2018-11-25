@@ -17,7 +17,7 @@
     ┣ .gitignore
     ┣ README.md
     ┣ Reversi.sln
-    ┣ class_layout.html
+    ┣ LISENSE.txt
     ┗ Reversi/
         ┣ .vcxprojファイル
         ┣ .hppファイル
