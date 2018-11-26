@@ -17,6 +17,10 @@ Core::Core():
 	SetMainWindowText( Util::ToCharPtr( "リバーシ　オンライン対戦" ) );
 	dxError = DxLib_Init();
 	ChangeFont("M+ 2m light"); //Fontインストール済じゃないと意味ないよ
+	SetFontSize( 20 );
+
+	Load( Resource::SoundIndex::Decide );
+	Load( Resource::SoundIndex::Jazz );
 }
 
 Core::~Core(){
@@ -24,15 +28,22 @@ Core::~Core(){
 }
 
 void Core::Update(){
+	dxError = ProcessMessage();
 	GetHitKeyStateAll( keyState );
 	cursol->SetClickFlag( !GetMouseInputLog2( cursol->GetPtrClickButtonType(), cursol->GetPtrPosX(), cursol->GetPtrPosY(), cursol->GetPtrClickLogType() ) );
 	GetMousePoint( cursol->GetPtrPosX(), cursol->GetPtrPosY() );
-	dxError = ProcessMessage();
+
+	if( LeftClickedInBox( 0, 0, 30, 30 ) ){
+		Play( Resource::SoundIndex::Decide, false );
+	}
+	Play( Resource::SoundIndex::Jazz, true );
+	Play( Resource::SoundIndex::Piano, true );
 }
 
 void Core::Draw() const{
 	ScreenFlip();
 	ClearDrawScreen();
+	DrawBox( 0, 0, 30, 30, COLOR_WHITE, NO_FILL );
 }
 
 bool Core::HasError() const{

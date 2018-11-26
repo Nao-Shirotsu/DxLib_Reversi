@@ -1,4 +1,4 @@
-#include "Resource_Manager.h"
+﻿#include "Resource_Manager.h"
 
 namespace{
 
@@ -6,8 +6,10 @@ constexpr const char* pictureFileName[1] = {
 	"Resource\\Picture\\samurai.png"
 };
 
-constexpr const char* soundFileName[1] = {
-	"Resource\\Sound\\decide.wav"
+constexpr const char* soundFileName[3] = {
+	"Resource\\Sound\\decide.wav",
+	"Resource\\Sound\\bgm_jazz.wav",
+	"Resource\\Sound\\bgm_piano.wav"
 };
 
 }
@@ -15,11 +17,11 @@ constexpr const char* soundFileName[1] = {
 namespace Resource{
 
 const char* Manager::GetPicPath( PicIndex index ){
-	return nullptr;
+	return pictureFileName[static_cast<int>( index )];
 }
 
 const char* Manager::GetSoundPath( SoundIndex index ){
-	return nullptr;
+	return soundFileName[static_cast<int>( index )];
 }
 
 }

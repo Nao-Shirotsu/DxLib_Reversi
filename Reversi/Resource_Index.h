@@ -12,6 +12,8 @@ enum class PicIndex{
 
 enum class SoundIndex{
 	Decide = 0,
+	Jazz,
+	Piano,
 };
 
 }

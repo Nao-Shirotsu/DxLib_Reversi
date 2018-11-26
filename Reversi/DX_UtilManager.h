@@ -18,9 +18,13 @@ public:
 
 	~UtilManager();
 
-	// enum classの値から欲しい画像を特定してメモリに読み込む
+	// enum classの値から欲しい画像を特定してメモリに読み込む/解放する
+	// 各ファイルハンドルの値を返すので、シーンごとにそれらを保存すること
 	void Load( Resource::PicIndex index ) const;
 	void Load( Resource::SoundIndex index ) const;
+
+	void UnLoad( Resource::PicIndex index );
+	void UnLoad( Resource::SoundIndex index );
 
 	// 文字列を描画(テスト用出力であり、大きさなどは変更できない)
 	void DrawStr( const std::string& text, int x, int y ) const;
@@ -34,8 +38,9 @@ public:
 	// ロードした画像ファイルを描画
 	void DrawPic( Resource::PicIndex index ) const;
 
-	// ロードした音声ファイルを再生
-	void Play( Resource::SoundIndex index ) const;
+	// ロードした音声ファイルを再生/停止(一時停止でなく完全に停止)
+	void Play( Resource::SoundIndex index, bool isLoopPlay ) const;
+	void StopSound( Resource::SoundIndex index );
 
 	// あるキーが押されたか引数keyで受け取って調べる
 	bool IsKeyDown( KeyCode key ) const;
