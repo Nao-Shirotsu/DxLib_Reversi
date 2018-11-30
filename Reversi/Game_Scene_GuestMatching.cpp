@@ -10,8 +10,19 @@ namespace Game::Scene{
 GuestMatching::GuestMatching():
 	nextSceneID( Game::SceneID::GuestMatching ){
 	using namespace Game;
-	clickbuttons[SceneID::Title] = DX::Object::ClickButton( dxManager, "タイトルへ戻る", 100, 100 );
-	clickbuttons[SceneID::GamePlay] = DX::Object::ClickButton( dxManager, "マッチング完了", 400, 300 );
+	using namespace Resource;
+
+	soundObjects.try_emplace(
+		SoundIndex::Decide,
+		std::make_unique<DX::Object::SoundPlayer>( dxManager, SoundIndex::Decide, false ) );
+
+	clickbuttons.try_emplace( 
+		SceneID::Title,
+		std::make_unique<DX::Object::ClickButton>( dxManager, "タイトルへ戻る", 100, 100 ) );
+
+	clickbuttons.try_emplace( 
+		SceneID::GamePlay,
+		std::make_unique<DX::Object::ClickButton>( dxManager, "マッチング完了", 400, 300 ) );
 }
 
 GuestMatching::~GuestMatching(){}
@@ -28,12 +39,14 @@ void GuestMatching::Draw() const{
 }
 
 bool GuestMatching::NeedsTransition(){
-	if( clickbuttons[SceneID::Title].WasLeftClicked() ){
+	if( clickbuttons[SceneID::Title]->WasLeftClicked() ){
+		soundObjects[Resource::SoundIndex::Decide]->Play();
 		nextSceneID = Game::SceneID::Title;
 		return true;
 	}
 
-	if( clickbuttons[SceneID::GamePlay].WasLeftClicked() ){
+	if( clickbuttons[SceneID::GamePlay]->WasLeftClicked() ){
+		soundObjects[Resource::SoundIndex::Decide]->Play();
 		nextSceneID = Game::SceneID::GamePlay;
 		return true;
 	}

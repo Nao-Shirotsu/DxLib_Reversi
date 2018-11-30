@@ -7,6 +7,7 @@
 #include "DX_Core.h"
 #include "Game_SceneID.h"
 #include "DX_Object_ClickButton.h"
+#include "DX_Object_SoundPlayer.h"
 
 namespace Game::Scene{
 
@@ -42,8 +43,13 @@ protected:
 
 	void DrawAllClickButtons() const;
 
-	// クリックボタンを格納
-	std::unordered_map<Game::SceneID, DX::Object::ClickButton> clickbuttons;
+	// シーン遷移クリックボタンを格納
+	// mapのキーは次どのシーンに遷移するか示す
+	std::unordered_map<Game::SceneID, std::unique_ptr<DX::Object::ClickButton>> clickbuttons;
+
+	// サウンドオブジェクトを格納
+	// mapのキーは音声ファイルのインデックス
+	std::unordered_map<Resource::SoundIndex, std::unique_ptr<DX::Object::SoundPlayer>> soundObjects;
 };
 
 }

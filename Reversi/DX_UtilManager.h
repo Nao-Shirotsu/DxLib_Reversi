@@ -51,6 +51,9 @@ public:
 protected:
 	static inline char keyState[256];
 	static std::unique_ptr<MouseCursol> cursol;
+
+	static inline std::unordered_map<Resource::PicIndex, int> picHandles;
+	static inline std::unordered_map<Resource::SoundIndex, int> soundHandles;
 };
 
 }

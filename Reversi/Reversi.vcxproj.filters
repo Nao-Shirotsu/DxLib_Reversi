@@ -94,6 +94,9 @@
     <ClCompile Include="DX_Core.cpp">
       <Filter>DX</Filter>
     </ClCompile>
+    <ClCompile Include="DX_Object_SoundPlayer.cpp">
+      <Filter>DX\Object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource_Index.h">
@@ -176,6 +179,9 @@
     </ClInclude>
     <ClInclude Include="DX_Core.h">
       <Filter>DX</Filter>
+    </ClInclude>
+    <ClInclude Include="DX_Object_SoundPlayer.h">
+      <Filter>DX\Object</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

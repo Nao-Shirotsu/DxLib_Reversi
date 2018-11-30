@@ -137,6 +137,7 @@
   <ItemGroup>
     <ClCompile Include="DX_MouseCursol.cpp" />
     <ClCompile Include="DX_Object_ClickButton.cpp" />
+    <ClCompile Include="DX_Object_SoundPlayer.cpp" />
     <ClCompile Include="DX_UnsettableMouseCursol.cpp" />
     <ClCompile Include="DX_UtilManager.cpp" />
     <ClCompile Include="Game_Scene_Achievements.cpp" />
@@ -162,6 +163,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DX_ConstantValues.h" />
+    <ClInclude Include="DX_Object_SoundPlayer.h" />
     <ClInclude Include="DX_UtilManager.h" />
     <ClInclude Include="DX_MouseCursol.h" />
     <ClInclude Include="DX_Object_ClickButton.h" />

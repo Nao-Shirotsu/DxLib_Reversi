@@ -6,7 +6,7 @@ IScene::~IScene(){}
 
 void IScene::DrawAllClickButtons() const{
 	for( const auto& button : clickbuttons ){
-		button.second.Draw();
+		button.second->Draw();
 	}
 }
 

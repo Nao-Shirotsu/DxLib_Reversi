@@ -12,11 +12,27 @@ namespace Game::Scene{
 GamePlay::GamePlay():
 	nextSceneID( Game::SceneID::GamePlay ){
 	using namespace Game;
+	using namespace Resource;
 
-	clickbuttons[SceneID::ScoreBoard] = DX::Object::ClickButton( dxManager, "スコアボード", 100, 100 );
-	clickbuttons[SceneID::Disconnection] = DX::Object::ClickButton( dxManager, "通信切断", 400, 100 );
-	clickbuttons[SceneID::Pause] = DX::Object::ClickButton( dxManager, "ポーズ", 100, 300 );
-	clickbuttons[SceneID::GameOver] = DX::Object::ClickButton( dxManager, "ゲームオーバー", 400, 300 );
+	soundObjects.try_emplace(
+		SoundIndex::Decide,
+		std::make_unique<DX::Object::SoundPlayer>( dxManager, SoundIndex::Decide, false ) );
+
+	clickbuttons.try_emplace( 
+		SceneID::ScoreBoard,
+		std::make_unique<DX::Object::ClickButton>( dxManager, "スコアボード", 100, 100 ) );
+
+	clickbuttons.try_emplace( 
+		SceneID::Disconnection,
+		std::make_unique<DX::Object::ClickButton>( dxManager, "通信切断", 400, 100 ) );
+
+	clickbuttons.try_emplace( 
+		SceneID::Pause,
+		std::make_unique<DX::Object::ClickButton>( dxManager, "ポーズ", 100, 300 ) );
+
+	clickbuttons.try_emplace( 
+		SceneID::GameOver,
+		std::make_unique<DX::Object::ClickButton>( dxManager, "ゲームオーバー", 400, 300 ) );
 }
 
 GamePlay::~GamePlay(){}
@@ -33,23 +49,27 @@ void GamePlay::Draw() const{
 }
 
 bool GamePlay::NeedsTransition(){
-	if( clickbuttons[SceneID::ScoreBoard].WasLeftClicked() ){
+	if( clickbuttons[SceneID::ScoreBoard]->WasLeftClicked() ){
 		nextSceneID = Game::SceneID::ScoreBoard;
+		soundObjects[Resource::SoundIndex::Decide]->Play();
 		return true;
 	}
 
-	if( clickbuttons[SceneID::Disconnection].WasLeftClicked() ){
+	if( clickbuttons[SceneID::Disconnection]->WasLeftClicked() ){
 		nextSceneID = Game::SceneID::Disconnection;
+		soundObjects[Resource::SoundIndex::Decide]->Play();
 		return true;
 	}
 
-	if( clickbuttons[SceneID::Pause].WasLeftClicked() ){
+	if( clickbuttons[SceneID::Pause]->WasLeftClicked() ){
 		nextSceneID = Game::SceneID::Pause;
+		soundObjects[Resource::SoundIndex::Decide]->Play();
 		return true;
 	}
 
-	if( clickbuttons[SceneID::GameOver].WasLeftClicked() ){
+	if( clickbuttons[SceneID::GameOver]->WasLeftClicked() ){
 		nextSceneID = Game::SceneID::GameOver;
+		soundObjects[Resource::SoundIndex::Decide]->Play();
 		return true;
 	}
 	return false;

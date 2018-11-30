@@ -7,7 +7,15 @@ namespace Game::Scene{
 
 Achievements::Achievements(){
 	using namespace Game;
-	clickbuttons[SceneID::Title] = DX::Object::ClickButton( dxManager, "タイトルへ戻る", 100, 100 );
+	using namespace Resource;
+
+	soundObjects.try_emplace(
+		SoundIndex::Decide,
+		std::make_unique<DX::Object::SoundPlayer>( dxManager, SoundIndex::Decide, false ) );
+
+	clickbuttons.try_emplace( 
+		SceneID::Title,
+		std::make_unique<DX::Object::ClickButton>( dxManager, "タイトルへ戻る", 100, 100 ) );
 }
 
 Achievements::~Achievements(){}
@@ -25,7 +33,8 @@ void Achievements::Draw() const{
 
 bool Achievements::NeedsTransition(){
 	using namespace Game;
-	if( clickbuttons[SceneID::Title].WasLeftClicked() ){
+	if( clickbuttons[SceneID::Title]->WasLeftClicked() ){
+		soundObjects[Resource::SoundIndex::Decide]->Play();
 		return true;
 	}
 	return false;

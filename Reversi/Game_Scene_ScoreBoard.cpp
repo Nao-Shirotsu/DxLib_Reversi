@@ -7,7 +7,15 @@ namespace Game::Scene{
 
 ScoreBoard::ScoreBoard(){
 	using namespace Game;
-	clickbuttons[SceneID::GamePlay] = DX::Object::ClickButton( dxManager, "ゲームに戻る", 100, 100 );
+	using namespace Resource;
+
+	soundObjects.try_emplace(
+		SoundIndex::Decide,
+		std::make_unique<DX::Object::SoundPlayer>( dxManager, SoundIndex::Decide, false ) );
+
+	clickbuttons.try_emplace( 
+		SceneID::GamePlay,
+		std::make_unique<DX::Object::ClickButton>( dxManager, "ゲームに戻る", 100, 100 ) );
 }
 
 ScoreBoard::~ScoreBoard(){}
@@ -24,7 +32,8 @@ void ScoreBoard::Draw() const{
 }
 
 bool ScoreBoard::NeedsTransition(){
-	if( clickbuttons[SceneID::GamePlay].WasLeftClicked() ){
+	if( clickbuttons[SceneID::GamePlay]->WasLeftClicked() ){
+		soundObjects[Resource::SoundIndex::Decide]->Play();
 		return true;
 	}
 	return false;

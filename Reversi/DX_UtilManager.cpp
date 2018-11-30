@@ -65,7 +65,7 @@ void UtilManager::Play( Resource::SoundIndex index, bool isLoopPlay ) const{
 	if( CheckSoundMem( itr->second ) == NOT_NOWPLAYING ){
 		constexpr int LOOP = DX_PLAYTYPE_LOOP;
 		constexpr int NO_LOOP = DX_PLAYTYPE_NORMAL;
-		PlaySoundMem( itr->second, isLoopPlay? LOOP: NO_LOOP );
+		PlaySoundMem( itr->second, isLoopPlay? LOOP: NO_LOOP, int( !isLoopPlay ) );
 	}
 }
 

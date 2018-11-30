@@ -6,6 +6,8 @@
 #include "DX_Core.h"
 #include "Util.h"
 
+#include "DX_Object_SoundPlayer.h"
+
 namespace DX{
 
 Core::Core():
@@ -19,8 +21,10 @@ Core::Core():
 	ChangeFont("M+ 2m light"); //Fontインストール済じゃないと意味ないよ
 	SetFontSize( 20 );
 
-	Load( Resource::SoundIndex::Decide );
-	Load( Resource::SoundIndex::Jazz );
+	//-----test------
+	//Load( Resource::SoundIndex::Decide );
+	//Load( Resource::SoundIndex::Piano );
+	//---------------
 }
 
 Core::~Core(){
@@ -33,17 +37,22 @@ void Core::Update(){
 	cursol->SetClickFlag( !GetMouseInputLog2( cursol->GetPtrClickButtonType(), cursol->GetPtrPosX(), cursol->GetPtrPosY(), cursol->GetPtrClickLogType() ) );
 	GetMousePoint( cursol->GetPtrPosX(), cursol->GetPtrPosY() );
 
-	if( LeftClickedInBox( 0, 0, 30, 30 ) ){
-		Play( Resource::SoundIndex::Decide, false );
-	}
-	Play( Resource::SoundIndex::Jazz, true );
-	Play( Resource::SoundIndex::Piano, true );
+	//-----test----
+	//if( LeftClickedInBox( 600, 500, 650, 550 ) ){
+	//	Play( Resource::SoundIndex::Decide, false );
+	//}
+	//Play( Resource::SoundIndex::Jazz, true );
+	//Play( Resource::SoundIndex::Piano, true );
+	//-------------
 }
 
 void Core::Draw() const{
 	ScreenFlip();
 	ClearDrawScreen();
-	DrawBox( 0, 0, 30, 30, COLOR_WHITE, NO_FILL );
+
+	//-----test-----
+	//DrawBox( 600, 500, 650, 550, COLOR_WHITE, NO_FILL );
+	//--------------
 }
 
 bool Core::HasError() const{

@@ -10,8 +10,18 @@ namespace Game::Scene{
 ReturnToTitle::ReturnToTitle():
 	nextSceneID( Game::SceneID::ReturnToTitle ){
 	using namespace Game;
-	clickbuttons[SceneID::Title] = DX::Object::ClickButton( dxManager, "切断する", 300, 100 );
-	clickbuttons[SceneID::Pause] = DX::Object::ClickButton( dxManager, "ゲームに戻る", 100, 100 );
+	using namespace Resource;
+
+	soundObjects.try_emplace(
+		SoundIndex::Decide,
+		std::make_unique<DX::Object::SoundPlayer>( dxManager, SoundIndex::Decide, false ) );
+
+	clickbuttons.try_emplace( 
+		SceneID::Title,
+		std::make_unique<DX::Object::ClickButton>( dxManager, "切断する", 300, 100 ) );
+
+	clickbuttons.try_emplace( SceneID::Pause,
+		std::make_unique<DX::Object::ClickButton>( dxManager, "ゲームに戻る", 100, 100 ) );
 }
 
 ReturnToTitle::~ReturnToTitle(){}
@@ -28,12 +38,14 @@ void ReturnToTitle::Draw() const{
 }
 
 bool ReturnToTitle::NeedsTransition(){
-	if( clickbuttons[SceneID::Pause].WasLeftClicked() ){
+	if( clickbuttons[SceneID::Pause]->WasLeftClicked() ){
+		soundObjects[Resource::SoundIndex::Decide]->Play();
 		nextSceneID = Game::SceneID::Pause;
 		return true;
 	}
 
-	if( clickbuttons[SceneID::Title].WasLeftClicked() ){
+	if( clickbuttons[SceneID::Title]->WasLeftClicked() ){
+		soundObjects[Resource::SoundIndex::Decide]->Play();
 		nextSceneID = Game::SceneID::Title;
 		return true;
 	}
