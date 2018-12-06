@@ -6,7 +6,7 @@
 <dl>
     <dt>言語</dt>
     <dd>C++</dd>    
-    <dt>ソースコード作成・ビルド</dt>
+    <dt>プログラム記述</dt>
     <dd>Visual Studio 2017</dd>    
     <dt>フレームワーク</dt>
     <dd>DXライブラリ</dd>    
@@ -17,7 +17,7 @@
     ┣ .gitignore
     ┣ README.md
     ┣ Reversi.sln
-    ┣ LISENSE.txt
+    ┣ LICENSE.txt
     ┗ Reversi/
         ┣ .vcxprojファイル
         ┣ .hppファイル
